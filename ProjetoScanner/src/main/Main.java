@@ -26,7 +26,6 @@ public class Main {
 //		System.out.println("O numero desejado foi: " + numeroOpcao);
 		System.out.printf("O numero desejado foi %d \n", numeroOpcao);
 		System.out.println("-------------------------------------");
-		System.out.println("-------------------------------------");
 		
 	}
 
