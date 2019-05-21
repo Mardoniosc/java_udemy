@@ -19,10 +19,6 @@ public class ProjetoTiposVariaveis {
 		int converter2 = (int)numero4;//necessitou de cast
 		byte converter3 = (byte)numero4;//necessitou de cast
 		
-		
-		
-		
-		
 		//tipo caracter
 		char valorchar = 'a';
 		int converter4 = valorchar;
