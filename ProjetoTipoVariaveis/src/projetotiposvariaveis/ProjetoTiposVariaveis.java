@@ -14,8 +14,20 @@ public class ProjetoTiposVariaveis {
 		byte numero3 = 127;
 		long numero4 = 6546542;
 		
+		//converter inteiro por inteiro
+		int converter1 = numero2; //Converteu normalmente
+		int converter2 = (int)numero4;//necessitou de cast
+		byte converter3 = (byte)numero4;//necessitou de cast
+		
+		
+		
+		
+		
 		//tipo caracter
 		char valorchar = 'a';
+		int converter4 = valorchar;
+		System.out.println(converter4);
+		
 		System.out.println(valorchar);
 		
 		//tipos flutuantes
@@ -36,6 +48,11 @@ public class ProjetoTiposVariaveis {
 		Double numero8 = 4.52;
 		
 		System.out.println(numero8 + numero8);
+		System.out.println(numero8.toString() +" "+ numero8.toString());
+		
+		//constantes
+		final double pi = 3.14;
+		System.out.println(pi);
 		
 	}
 
