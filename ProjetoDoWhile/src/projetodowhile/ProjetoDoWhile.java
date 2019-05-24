@@ -11,8 +11,20 @@ public class ProjetoDoWhile {
 		do {
 			System.out.println("Repetição de numero: " + contador);
 			contador++;
-		} while (contador <=20);
+		} while (contador <=1);
 		
+		// execicio de comparação
+		int i = 0;
+		
+		System.out.println("Estrutura while");
+		while (i < 5) {
+			System.out.println("interação: " + i++);	
+		}
+		i = 0;
+		System.out.println("Estrutura do while");
+		do {
+			System.out.println("Interação: " + i++);
+		} while (i < 5);
 	}
 
 }
