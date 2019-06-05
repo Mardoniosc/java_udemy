@@ -3,12 +3,12 @@ package projetoclasses;
 public class ClassePizza {
 	
 	//atributos
-	public String formato;
-	public String nome;
-	public int quantidadePedaco;
-	public String[] ingredientes;
-	public int quantidadeSabores;
-	public String getFormato() {
+	private String formato;
+	private String nome;
+	private int quantidadePedaco;
+	private String[] ingredientes;
+	private int quantidadeSabores;
+	private String getFormato() {
 		return formato;
 	}
 	public void setFormato(String formato) {

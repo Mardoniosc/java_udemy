@@ -3,14 +3,14 @@ package projetoclasses;
 public class ClasseIPTU {
 
 	//atributos
-	public String codigoImovel;
-	public String nomeProprietario;
-	public String setor;
-	public String endereco;
-	public int numeroImovel;
-	public double areaImovel;
-	public double areaContruida;
-	public String getCodigoImovel() {
+	private String codigoImovel;
+	private String nomeProprietario;
+	private String setor;
+	private String endereco;
+	private int numeroImovel;
+	private double areaImovel;
+	private double areaContruida;
+	private String getCodigoImovel() {
 		return codigoImovel;
 	}
 	public void setCodigoImovel(String codigoImovel) {

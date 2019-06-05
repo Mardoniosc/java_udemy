@@ -6,11 +6,11 @@ import java.sql.Date;
 public class ClasseContaBancaria {
 	
 	//atributos
-	public String numeroConta;
-	public int numeroAgencia;
-	public int codigoClient;
-	public BigDecimal saldoConta;
-	public Date dataAberturaConta;
+	private String numeroConta;
+	private int numeroAgencia;
+	private int codigoClient;
+	private BigDecimal saldoConta;
+	private Date dataAberturaConta;
 	
 	// metodos get e set
 	

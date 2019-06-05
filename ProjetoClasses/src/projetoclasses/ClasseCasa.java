@@ -2,15 +2,15 @@ package projetoclasses;
 
 public class ClasseCasa {
 
-	public float areaTerreno;
-	public float areaContruida;
-	public String tipoContrucao;
-	public String cor;
-	public int quantidadeQuartos;
-	public int quantidadeBanheiros;
-	public boolean temGaragem;
-	public float areaGaragem;
-	public String tipoTelhado;
+	private float areaTerreno;
+	private float areaContruida;
+	private String tipoContrucao;
+	private String cor;
+	private int quantidadeQuartos;
+	private int quantidadeBanheiros;
+	private boolean temGaragem;
+	private float areaGaragem;
+	private String tipoTelhado;
 	
 	// get e set
 	

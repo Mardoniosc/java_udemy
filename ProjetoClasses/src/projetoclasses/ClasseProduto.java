@@ -5,10 +5,10 @@ import java.math.BigDecimal;
 public class ClasseProduto {
 
 	//metodos
-	public int codigo;
-	public String nome;
-	public BigDecimal preco;
-	public String[] ingredientes;
+	private int codigo;
+	private String nome;
+	private BigDecimal preco;
+	private String[] ingredientes;
 	
 	// get e set
 	
