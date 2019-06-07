@@ -65,6 +65,8 @@ public class ProjetoClasses {
 		// Instanciar um objeto com o contrutor padrão
 		
 		ClasseCarro carroContrutor = new ClasseCarro(); // sem entrada de dados
+		//modificar para false a variavel static possuiFarol
+		carroContrutor.possuiFarol = false;
 		// instrancia objeto de primeira sobrecarga de contrutor
 		ClasseCarro carroContrutor1 = new ClasseCarro("Fiat");
 		System.out.println("Segundo contrutor " + carroContrutor1.getMarca());
@@ -79,7 +81,11 @@ public class ProjetoClasses {
 		+ carroContrutor3.getPlaca() + carroContrutor3.getCor() + carroContrutor3.getAnoFabricacao()
 		+ carroContrutor3.getAnoModelo());
 		
+		System.out.println("Farol " + carroContrutor2.possuiFarol);
+		// modificar a quantidade da variavel quantidadePneus da ClasseCarro e não do objeto
+		ClasseCarro.quantidadePneus = 4;
 		
+		System.out.println("Penus " + carroContrutor1.quantidadePneus);
 		
 		
 		

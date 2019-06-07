@@ -15,6 +15,9 @@ public class ClasseCarro {
 	private int anoModelo;
 	private boolean motorLigado = false;
 	private String numeroChassi;
+	//atributo Static
+	public static boolean possuiFarol = true;
+	public static int quantidadePneus = 5;
 	
 	// declarando construtor aqui
 	public ClasseCarro() {
