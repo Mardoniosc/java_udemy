@@ -20,6 +20,7 @@ public class ProjetoClasses {
 		// instanciar um outro objeto da classe Scanner
 		// o contrutor já recebera uma variavel com um valor atribuido
 		
+/*
 		String frase = "Olá Mundo!";
 		
 		Scanner entradaFrase = new Scanner(frase);
@@ -59,10 +60,24 @@ public class ProjetoClasses {
 		carro.setMarca("Fiat");
 		carro1.setMarca("Volksvagen");
 		carro2.setMarca("Chevrolet");
+*/		
 		
+		// Instanciar um objeto com o contrutor padrão
 		
+		ClasseCarro carroContrutor = new ClasseCarro(); // sem entrada de dados
+		// instrancia objeto de primeira sobrecarga de contrutor
+		ClasseCarro carroContrutor1 = new ClasseCarro("Fiat");
+		System.out.println("Segundo contrutor " + carroContrutor1.getMarca());
+		// instrancia objeto de segunda sobrecarga de contrutor
+		ClasseCarro carroContrutor2 = new ClasseCarro("Fiat", "Palio");
+		System.out.println("Terceiro contrutor " + carroContrutor2.getMarca() +" "+  carroContrutor2.getModelo());
+		carroContrutor.setMarca("Fiat");
 		
-		
+		// instrancia objeto de terceira sobrecarga de contrutor
+		ClasseCarro carroContrutor3 = new ClasseCarro("Fiat", "Palio", "JKA-7637", "Verde", 6, 2016, 2016, true, "ASDFA6S5D4F65AS4DF65ASD");
+		System.out.println("Terceiro contrutor" + carroContrutor3.getMarca() + carroContrutor3.getModelo()
+		+ carroContrutor3.getPlaca() + carroContrutor3.getCor() + carroContrutor3.getAnoFabricacao()
+		+ carroContrutor3.getAnoModelo());
 		
 		
 		

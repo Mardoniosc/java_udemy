@@ -1,5 +1,7 @@
 package projetoclasses;
 
+import javax.print.attribute.standard.PrinterLocation;
+
 public class ClasseCarro {
 	
 	// atributos
@@ -13,6 +15,40 @@ public class ClasseCarro {
 	private int anoModelo;
 	private boolean motorLigado = false;
 	private String numeroChassi;
+	
+	// declarando construtor aqui
+	public ClasseCarro() {
+		System.out.println("O obejto foi criado com o contrutor padrão");
+	}
+	
+	// primeira sobrecarga de contrutor
+	public ClasseCarro(String marca) {
+		this.marca = marca;
+	}
+	
+	// segunda sobrecarga de construtor
+	public ClasseCarro(String marca, String modelo) {
+		this.marca = marca;
+		this.modelo = modelo;
+		
+	}
+	
+	// terceira sobrecarga de contrutor
+	public ClasseCarro(String marca, String modelo, String placa, String cor, int numeroMarcha, int anoFabricacao,
+			int anoModelo, boolean motorLigado, String numeroChassi) {
+		super();
+		this.marca = marca;
+		this.modelo = modelo;
+		this.placa = placa;
+		this.cor = cor;
+		this.numeroMarcha = numeroMarcha;
+		this.anoFabricacao = anoFabricacao;
+		this.anoModelo = anoModelo;
+		this.motorLigado = motorLigado;
+		this.numeroChassi = numeroChassi;
+	}
+	
+	
 	
 	public String getMarca() {
 		return marca;
