@@ -1,35 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package principal;
+package java;
 
-/**
- *
- * @author fschi
- */
+import java.util.Date;
+
 public class PessoaFisica extends DadosAdicionais {
-    
-    private String nome;
-    private String sobrenome;
 
-    public String getNome() {
-        return nome;
-    }
+	private String nome;
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	private String sobrenome;
 
-    public String getSobrenome() {
-        return sobrenome;
-    }
+	private String cof;
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-    
-    
-    
+	private String rg;
+
+	private String estadoCivil;
+
+	private String regimeBens;
+
+	private String naturalidade;
+
+	private String estadoNaturalidade;
+
+	private String nomePai;
+
+	private String nomeMae;
+
+	private char sexo;
+
+	private String escolaridade;
+
+	private String profissao;
+
+	private Date dataNascimento;
+
+	private String anotacoes;
+
 }

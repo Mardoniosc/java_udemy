@@ -1,37 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package principal;
+package java;
 
-/**
- *
- * @author fschi
- */
 public class DadosAdicionais extends Endereco {
-    
-    //atributos
-    private String telefoneResidencial;
-    private String telefoneComercial;
 
-    public String getTelefoneResidencial() {
-        return telefoneResidencial;
-    }
+	private String telefoneResidencial;
 
-    public void setTelefoneResidencial(String telefoneResidencial) {
-        this.telefoneResidencial = telefoneResidencial;
-    }
+	private String telefoneComercial;
 
-    public String getTelefoneComercial() {
-        return telefoneComercial;
-    }
+	private String celularPessoal;
 
-    public void setTelefoneComercial(String telefoneComercial) {
-        this.telefoneComercial = telefoneComercial;
-    }
-    
-    
-    
-    
+	private String celularComercial;
+
+	private boolean possuiWhatsappPessoal;
+
+	private boolean possuiWhatsappComercial;
+
+	private String emailPessoal;
+
+	private String emailComercial;
+
+	private String site;
+
 }

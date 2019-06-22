@@ -1,35 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package principal;
+package java;
 
-/**
- *
- * @author fschi
- */
 public class Endereco {
-   
-    //atributos
-    private String tipoLogradouro;
-    private String logradouro;
 
-    public String getTipoLogradouro() {
-        return tipoLogradouro;
-    }
+	private String tipoLodradouro;
 
-    public void setTipoLogradouro(String tipoLogradouro) {
-        this.tipoLogradouro = tipoLogradouro;
-    }
+	private String logrdouro;
 
-    public String getLogradouro() {
-        return logradouro;
-    }
+	private int numero;
 
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
-    
-    
+	private String bairro;
+
+	private String complemento;
+
+	private String cidade;
+
+	private String estado;
+
+	private String cep;
+
+	private String latitudeGoogleMaps;
+
+	private String longitudeGoogleMaps;
+
 }

@@ -1,36 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package principal;
+package java;
 
-/**
- *
- * @author fschi
- */
+import java.util.Date;
+
 public class PessoaJuridica extends DadosAdicionais {
-    
-    //atributos
-    private String razaoSocial;
-    private String nomeFantasia;
 
-    public String getRazaoSocial() {
-        return razaoSocial;
-    }
+	private String razaoSocial;
 
-    public void setRazaoSocial(String razaoSocial) {
-        this.razaoSocial = razaoSocial;
-    }
+	private String nomeFantasia;
 
-    public String getNomeFantasia() {
-        return nomeFantasia;
-    }
+	private String cnpj;
 
-    public void setNomeFantasia(String nomeFantasia) {
-        this.nomeFantasia = nomeFantasia;
-    }
-    
-    
-    
+	private String InscricaoEstadual;
+
+	private boolean isentoIE;
+
+	private String atividadePrinciapl;
+
+	private String nomeAdministrador;
+
+	private Date dataAbertura;
+
+	private String anotacoes;
+
 }
