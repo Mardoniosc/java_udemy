@@ -9,6 +9,6 @@ package principal;
  *
  * @author fschi
  */
-public class FornecedorJuridico extends PessoaJuridica{
+public class ClienteFisica extends PessoaFisica {
     
 }
