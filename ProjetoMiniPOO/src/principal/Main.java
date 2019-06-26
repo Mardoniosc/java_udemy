@@ -7,7 +7,7 @@ package principal;
  *
  * @author Fabiano Schincariol
  */
-public class main {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -15,9 +15,9 @@ public class main {
     public static void main(String[] args) {
         
         ClienteFisica cf = new ClienteFisica();
-        ClienteJuridico cj = new ClienteJuridico();
+        ClienteJuridica cj = new ClienteJuridica();
         FornecedorFisica ff = new FornecedorFisica();
-        FornecedorJuridico fj = new FornecedorJuridico();
+        FornecedorJuridica fj = new FornecedorJuridica();
              
         
         
