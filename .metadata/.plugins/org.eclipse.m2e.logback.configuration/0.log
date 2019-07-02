@@ -35,3 +35,8 @@ Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to download.ecl
 	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:456) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
 	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:359) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
 	... 13 common frames omitted
+2019-07-01 21:05:45,289 [Worker-883] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-07-01 21:05:56,355 [Worker-883] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/xerial/xerial-project/1.1/xerial-project-1.1.pom
+2019-07-01 21:05:56,656 [Worker-883] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 11 sec
+2019-07-01 21:05:56,659 [Worker-883] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-07-01 21:05:56,769 [Worker-883] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec

@@ -701,3 +701,9 @@ java.net.SocketException: Connection reset
 	at org.eclipse.eclemma.internal.core.MemoryExecutionDataSource.readFrom(MemoryExecutionDataSource.java:68)
 	at org.eclipse.eclemma.internal.core.launching.AgentServer.run(AgentServer.java:114)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.jdt.launching 4 124 2019-07-01 21:10:01.127
+!MESSAGE Launch configuration New_configuration references closed project ProjetoSQLite
+
+!ENTRY org.eclipse.jdt.launching 4 124 2019-07-01 21:10:05.171
+!MESSAGE Launch configuration New_configuration references closed project ProjetoSQLite
