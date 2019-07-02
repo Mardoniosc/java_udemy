@@ -707,3 +707,12 @@ java.net.SocketException: Connection reset
 
 !ENTRY org.eclipse.jdt.launching 4 124 2019-07-01 21:10:05.171
 !MESSAGE Launch configuration New_configuration references closed project ProjetoSQLite
+
+!ENTRY org.eclipse.jdt.launching 4 124 2019-07-01 21:26:57.538
+!MESSAGE Launch configuration New_configuration references closed project ProjetoSQLite
+
+!ENTRY org.eclipse.jdt.launching 4 124 2019-07-01 21:27:08.169
+!MESSAGE Launch configuration New_configuration references closed project ProjetoSQLite
+
+!ENTRY org.eclipse.jdt.launching 4 124 2019-07-01 21:27:26.385
+!MESSAGE Launch configuration New_configuration references closed project ProjetoSQLite
