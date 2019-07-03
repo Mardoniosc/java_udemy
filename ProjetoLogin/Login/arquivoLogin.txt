@@ -1,0 +1,84 @@
+Log de registro de Login
+Usuario: teste
+Senha: 123
+Tue Jul 02 22:37:12 BRT 2019
+
+-------------------------------------------
+
+Log de registro de Login
+Usuario: teste
+Senha: 123
+Tue Jul 02 22:37:15 BRT 2019
+
+-------------------------------------------
+
+Log de tentativa de Login
+Usuario: Mardonio
+Senha: 123
+Tue Jul 02 22:39:37 BRT 2019
+
+-------------------------------------------
+
+Log de tentativa de Login
+Usuario: Teste
+Senha: 123
+Tue Jul 02 22:41:29 BRT 2019
+
+-------------------------------------------
+
+Log de tentativa de Login
+Usuario: Marodnio
+Senha: Costa
+Tue Jul 02 22:43:37 BRT 2019
+
+-------------------------------------------
+
+Log de tentativa de Login
+Usuario: teste
+Senha: asdf
+Tue Jul 02 22:46:13 BRT 2019
+
+-------------------------------------------
+
+Log de tentativa de Login
+Usuario: teste
+Senha: 123
+Tue Jul 02 22:46:29 BRT 2019
+
+-------------------------------------------
+
+Log de tentativa de Login
+Usuario: teste
+Senha: 123
+Tue Jul 02 22:48:06 BRT 2019
+
+-------------------------------------------
+
+Log de tentativa de Login
+Usuario: teste
+Senha: 123
+Tue Jul 02 22:49:02 BRT 2019
+
+-------------------------------------------
+
+Log de tentativa de Login
+Usuario: teste
+Senha: 123
+Tue Jul 02 22:52:12 BRT 2019
+
+-------------------------------------------
+
+Log de registro de Login
+Usuario: teste
+Senha: 123
+Tue Jul 02 22:52:45 BRT 2019
+
+-------------------------------------------
+
+Log de tentativa de Login
+Usuario: asdf
+Senha: 123
+Tue Jul 02 22:53:05 BRT 2019
+
+-------------------------------------------
+

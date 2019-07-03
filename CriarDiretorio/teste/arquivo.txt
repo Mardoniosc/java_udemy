@@ -1,3 +1,0 @@
-Cabeçalho do arquivo.txt
-Nome: Mardonio
-Sobrenome: Costa

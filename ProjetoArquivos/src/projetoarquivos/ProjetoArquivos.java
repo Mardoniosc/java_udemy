@@ -50,6 +50,8 @@ public class ProjetoArquivos {
 		// escrever e criar um arquivo .txt
 		
 		try {
+			
+			//cria o arquivo
 			FileWriter arquivoTXT = new FileWriter(subDiretorio.getAbsoluteFile() + "\\" + "arquivo.txt");
 			
 			//escrever no arquivo
