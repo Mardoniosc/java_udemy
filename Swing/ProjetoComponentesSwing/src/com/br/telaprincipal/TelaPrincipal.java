@@ -27,28 +27,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_label = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         txtTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        lblMensagem = new javax.swing.JLabel();
+        lblTeste = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Apresentação sobre componentes swing");
-
-        lbl_label.setBackground(new java.awt.Color(51, 255, 51));
-        lbl_label.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        lbl_label.setForeground(new java.awt.Color(0, 0, 204));
-        lbl_label.setText("jLabel");
-        lbl_label.setBorder(javax.swing.BorderFactory.createBevelBorder(2));
-        lbl_label.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbl_labelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbl_labelMouseExited(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Código: ");
@@ -93,7 +80,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Clicar");
+        jButton1.setText("Entrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        lblMensagem.setBackground(new java.awt.Color(255, 255, 255));
+        lblMensagem.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblMensagem.setText("Mensagem: ");
+
+        lblTeste.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTeste.setText("jLabel2");
+        lblTeste.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblTesteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblTesteMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,11 +109,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_label, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(159, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(90, 90, 90)
@@ -116,15 +126,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_label, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(14, 14, 14)
+                .addComponent(lblTeste)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(31, 31, 31)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(114, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(56, 56, 56)
@@ -132,22 +144,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addContainerGap(216, Short.MAX_VALUE)))
         );
 
-        lbl_label.getAccessibleContext().setAccessibleDescription("");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void lbl_labelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_labelMouseEntered
-
-        lbl_label.setText("Mouse em cima!");
-        
-    }//GEN-LAST:event_lbl_labelMouseEntered
-
-    private void lbl_labelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_labelMouseExited
-        
-        lbl_label.setText("Mouse saiu!");
-        
-    }//GEN-LAST:event_lbl_labelMouseExited
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         txtNome.setText("Deu enter!");
@@ -179,6 +177,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void txtNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomeMouseClicked
         txtNome.setText("Click do Mouse!");
     }//GEN-LAST:event_txtNomeMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        lblMensagem.setText("Mensagem: Usuário inválido!");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void lblTesteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTesteMouseEntered
+        lblTeste.setText("Mouse em cima");
+    
+    }//GEN-LAST:event_lblTesteMouseEntered
+
+    private void lblTesteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTesteMouseExited
+           lblTeste.setText("Mouse Saiu!");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTesteMouseExited
 
     /**
      * @param args the command line arguments
@@ -218,7 +232,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lbl_label;
+    private javax.swing.JLabel lblMensagem;
+    private javax.swing.JLabel lblTeste;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtTextField1;
     // End of variables declaration//GEN-END:variables
