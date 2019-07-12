@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package projetobentech01.views;
+import java.awt.Color;
 import projetobentech01.model.Login;
 import projetobentech01.model.LoginConexao;
 
@@ -74,6 +75,15 @@ public class FrmLogin extends javax.swing.JFrame {
         btnLogar.setForeground(new java.awt.Color(255, 255, 255));
         btnLogar.setText("Logar");
         btnLogar.setBorder(null);
+        btnLogar.setFocusPainted(false);
+        btnLogar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLogarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLogarMouseExited(evt);
+            }
+        });
         btnLogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogarActionPerformed(evt);
@@ -159,6 +169,14 @@ public class FrmLogin extends javax.swing.JFrame {
         //lg.InserirUsuário();
         lg.verificarUsuario();
     }//GEN-LAST:event_btnLogarActionPerformed
+
+    private void btnLogarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogarMouseEntered
+        btnLogar.setBackground(Color.red);
+    }//GEN-LAST:event_btnLogarMouseEntered
+
+    private void btnLogarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogarMouseExited
+        btnLogar.setBackground(new Color(102, 153, 255));
+    }//GEN-LAST:event_btnLogarMouseExited
 
     /**
      * @param args the command line arguments
