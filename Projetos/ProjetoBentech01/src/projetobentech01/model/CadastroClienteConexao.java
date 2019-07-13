@@ -1,9 +1,7 @@
 /*
- * Será responsável pela execução dos campos sql
+ * Responsável por conectar ao banco de dados.
  */
 package projetobentech01.model;
-
-
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,16 +11,16 @@ import javax.swing.JOptionPane;
 import projetobentech01.conexao.Conexao;
 import projetobentech01.views.FrmTelaPrincipal;
 
-
 /**
  *
  * @author p772920
  */
-public class LoginConexao {
+public class CadastroClienteConexao {
     
-    public void InserirUsuário(){
+    public void InserirCliente(){
     
-    String SQL = "INSERT INTO tb_login (usuario, senha) VALUES(?, ?)";
+    String SQL = "INSERT INTO tb_cadastro (nome, sobrenome, idade, data_nascimento, sexo, CPF, codigo_cliente) "
+            + "VALUES(?, ?, ?, ?, ?, ?, ?)";
     Connection conn = null;
     conn = Conexao.getConnection();//Conectar ao banco de dados
     PreparedStatement stmt = null;  
@@ -31,9 +29,16 @@ public class LoginConexao {
     try {
         
         stmt = conn.prepareStatement(SQL);
-        stmt.setString(1, Login.usuario);
-        stmt.setString(2, Login.senha);
+        stmt.setString(1, CadastroCliente.nome_cliente);
+        stmt.setString(2, CadastroCliente.sobrenome_cliente);
+        stmt.setInt(3, CadastroCliente.idade_cliente);
+        stmt.setDate(4, CadastroCliente.data_nascimento_cliente);
+        stmt.setString(5, CadastroCliente.sexo_cliente);
+        stmt.setString(6, CadastroCliente.CPF_cliente);
+        stmt.setString(7, CadastroCliente.codigo_cliente);
+        
         stmt.executeUpdate();
+        JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
 
     } catch (SQLException ex) {
 
@@ -45,7 +50,7 @@ public class LoginConexao {
 }
     
     public void verificarUsuario(){
-    String SQL = "SELECT usuario, senha FROM sd_chamados.tb_login where usuario = '" +Login.usuario +"'";
+    String SQL = "SELECT * FROM tb_cadastro";
     Connection conn = null;
     conn = Conexao.getConnection();//Conectar ao banco de datos
     PreparedStatement stmt = null;

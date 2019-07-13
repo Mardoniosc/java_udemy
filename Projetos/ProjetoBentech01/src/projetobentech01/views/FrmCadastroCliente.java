@@ -6,6 +6,15 @@
 package projetobentech01.views;
 
 import java.awt.Color;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import projetobentech01.model.CadastroCliente;
+import projetobentech01.model.CadastroClienteConexao;
 
 /**
  *
@@ -42,13 +51,13 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         txtCodigoCliente = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         txtSobreNome = new javax.swing.JTextField();
-        txtCPF = new javax.swing.JTextField();
         txtIdade = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        rdbSexoMasculino = new javax.swing.JRadioButton();
+        rdbSexoFeminino = new javax.swing.JRadioButton();
+        txtDataNascimento = new javax.swing.JFormattedTextField();
         btnLimpar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
+        txtCPF = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Clientes");
@@ -102,33 +111,28 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         txtSobreNome.setForeground(new java.awt.Color(255, 255, 255));
         txtSobreNome.setBorder(null);
 
-        txtCPF.setBackground(new java.awt.Color(153, 153, 153));
-        txtCPF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        txtCPF.setForeground(new java.awt.Color(255, 255, 255));
-        txtCPF.setBorder(null);
-
         txtIdade.setBackground(new java.awt.Color(153, 153, 153));
         txtIdade.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         txtIdade.setForeground(new java.awt.Color(255, 255, 255));
         txtIdade.setBorder(null);
 
-        jRadioButton1.setBackground(new java.awt.Color(51, 51, 51));
-        bntGrupoSexo.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Masculino");
+        rdbSexoMasculino.setBackground(new java.awt.Color(51, 51, 51));
+        bntGrupoSexo.add(rdbSexoMasculino);
+        rdbSexoMasculino.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        rdbSexoMasculino.setForeground(new java.awt.Color(255, 255, 255));
+        rdbSexoMasculino.setSelected(true);
+        rdbSexoMasculino.setText("Masculino");
 
-        jRadioButton2.setBackground(new java.awt.Color(51, 51, 51));
-        bntGrupoSexo.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setText("Feminino");
+        rdbSexoFeminino.setBackground(new java.awt.Color(51, 51, 51));
+        bntGrupoSexo.add(rdbSexoFeminino);
+        rdbSexoFeminino.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        rdbSexoFeminino.setForeground(new java.awt.Color(255, 255, 255));
+        rdbSexoFeminino.setText("Feminino");
 
-        jFormattedTextField1.setBackground(new java.awt.Color(153, 153, 153));
-        jFormattedTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        txtDataNascimento.setBackground(new java.awt.Color(153, 153, 153));
+        txtDataNascimento.setForeground(new java.awt.Color(255, 255, 255));
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDataNascimento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -147,6 +151,11 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                 btnLimparMouseExited(evt);
             }
         });
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setBackground(new java.awt.Color(102, 153, 255));
         btnSalvar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -162,6 +171,19 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                 btnSalvarMouseExited(evt);
             }
         });
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+
+        txtCPF.setBackground(new java.awt.Color(153, 153, 153));
+        txtCPF.setForeground(new java.awt.Color(255, 255, 255));
+        try {
+            txtCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout jpnCadastroClientesLayout = new javax.swing.GroupLayout(jpnCadastroClientes);
         jpnCadastroClientes.setLayout(jpnCadastroClientesLayout);
@@ -178,24 +200,25 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9))
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel7))
                         .addGap(39, 39, 39)
-                        .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                            .addComponent(txtCodigoCliente)
-                            .addComponent(txtSobreNome, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                            .addComponent(txtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                            .addComponent(txtIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                        .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addGap(168, 168, 168)
-                                .addComponent(jRadioButton2))
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnCadastroClientesLayout.createSequentialGroup()
-                        .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(rdbSexoMasculino)
+                                .addGap(170, 170, 170)
+                                .addComponent(rdbSexoFeminino))
+                            .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
+                                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                                .addComponent(txtCodigoCliente, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtSobreNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                                .addComponent(txtIdade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                                .addComponent(txtDataNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCPF, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jpnCadastroClientesLayout.setVerticalGroup(
@@ -226,17 +249,18 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rdbSexoMasculino)
+                        .addComponent(rdbSexoFeminino)))
                 .addGap(18, 18, 18)
                 .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44))
+                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         getContentPane().add(jpnCadastroClientes, java.awt.BorderLayout.CENTER);
@@ -263,6 +287,51 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         btnLimpar.setBackground(new Color(102, 153, 255));
     }//GEN-LAST:event_btnLimparMouseExited
 
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // jogar o que foi digitado nos atributos da classe cadastroCliente
+        CadastroCliente.codigo_cliente = txtCodigoCliente.getText();
+        CadastroCliente.nome_cliente = txtNome.getText();
+        
+        CadastroCliente.sobrenome_cliente = txtSobreNome.getText();
+        CadastroCliente.CPF_cliente = txtCPF.getText();
+        CadastroCliente.idade_cliente = Integer.parseInt(txtIdade.getText());
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+        try {
+            java.util.Date date = sdf.parse(txtDataNascimento.getText());
+            java.sql.Date dataSql = new java.sql.Date(date.getTime());
+            CadastroCliente.data_nascimento_cliente = dataSql;
+        } catch (ParseException ex){
+            Logger.getLogger(FrmCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+        if (rdbSexoMasculino.isSelected() == true){
+            CadastroCliente.sexo_cliente = "M";
+        }
+        else{
+            CadastroCliente.sexo_cliente = "F";
+        }
+        
+        CadastroClienteConexao cc = new CadastroClienteConexao();
+        cc.InserirCliente();
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    public void limparCampos(){
+        txtNome.setText("");
+        txtSobreNome.setText("");
+        txtCodigoCliente.setText("");
+        txtIdade.setText("");
+        txtCPF.setText("");
+        txtDataNascimento.setText("");
+        rdbSexoMasculino.setSelected(true);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -302,7 +371,6 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bntGrupoSexo;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -311,11 +379,12 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JPanel jpnCadastroClientes;
-    private javax.swing.JTextField txtCPF;
+    private javax.swing.JRadioButton rdbSexoFeminino;
+    private javax.swing.JRadioButton rdbSexoMasculino;
+    private javax.swing.JFormattedTextField txtCPF;
     private javax.swing.JTextField txtCodigoCliente;
+    private javax.swing.JFormattedTextField txtDataNascimento;
     private javax.swing.JTextField txtIdade;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtSobreNome;
