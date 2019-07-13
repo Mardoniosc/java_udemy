@@ -38,7 +38,7 @@ public class CadastroClienteConexao {
         stmt.setString(7, CadastroCliente.codigo_cliente);
         
         stmt.executeUpdate();
-        JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+        
 
     } catch (SQLException ex) {
 

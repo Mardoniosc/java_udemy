@@ -12,6 +12,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 import projetobentech01.model.CadastroCliente;
 import projetobentech01.model.CadastroClienteConexao;
@@ -318,8 +319,10 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
             CadastroCliente.sexo_cliente = "F";
         }
         
-        CadastroClienteConexao cc = new CadastroClienteConexao();
-        cc.InserirCliente();
+        CadastroClienteConexao cadcli = new CadastroClienteConexao();
+        cadcli.InserirCliente();
+        JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     public void limparCampos(){
