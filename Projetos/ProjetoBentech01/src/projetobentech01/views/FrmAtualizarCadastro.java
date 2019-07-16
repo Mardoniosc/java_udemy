@@ -6,28 +6,31 @@
 package projetobentech01.views;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
+import javax.swing.JOptionPane;
 import projetobentech01.model.CadastroCliente;
 import projetobentech01.model.CadastroClienteConexao;
+import projetobentech01.conexao.Conexao;
 
 /**
  *
  * @author p772920
  */
-public class FrmCadastroCliente extends javax.swing.JFrame {
+public class FrmAtualizarCadastro extends javax.swing.JFrame {
 
     /**
-     * Creates new form FrmCadastroCliente
+     * Creates new form FrmAtualizarCadastro
      */
-    public FrmCadastroCliente() {
+    public FrmAtualizarCadastro() {
         initComponents();
     }
 
@@ -40,7 +43,6 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bntGrupoSexo = new javax.swing.ButtonGroup();
         jpnCadastroClientes = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -57,12 +59,13 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         rdbSexoMasculino = new javax.swing.JRadioButton();
         rdbSexoFeminino = new javax.swing.JRadioButton();
         txtDataNascimento = new javax.swing.JFormattedTextField();
-        btnLimpar = new javax.swing.JButton();
-        btnSalvar = new javax.swing.JButton();
+        btnAtualizar = new javax.swing.JButton();
         txtCPF = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Clientes");
+        setTitle("Atualiza dados");
+        setMaximumSize(new java.awt.Dimension(657, 472));
+        setMinimumSize(new java.awt.Dimension(657, 472));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -77,7 +80,7 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel3.setText("Cadastro de Cliente");
+        jLabel3.setText("Atualizar Cliente");
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,14 +128,11 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         txtIdade.setBorder(null);
 
         rdbSexoMasculino.setBackground(new java.awt.Color(51, 51, 51));
-        bntGrupoSexo.add(rdbSexoMasculino);
         rdbSexoMasculino.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         rdbSexoMasculino.setForeground(new java.awt.Color(255, 255, 255));
-        rdbSexoMasculino.setSelected(true);
         rdbSexoMasculino.setText("Masculino");
 
         rdbSexoFeminino.setBackground(new java.awt.Color(51, 51, 51));
-        bntGrupoSexo.add(rdbSexoFeminino);
         rdbSexoFeminino.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         rdbSexoFeminino.setForeground(new java.awt.Color(255, 255, 255));
         rdbSexoFeminino.setText("Feminino");
@@ -145,43 +145,23 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        btnLimpar.setBackground(new java.awt.Color(102, 153, 255));
-        btnLimpar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
-        btnLimpar.setText("Limpar");
-        btnLimpar.setBorder(null);
-        btnLimpar.setFocusable(false);
-        btnLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAtualizar.setBackground(new java.awt.Color(102, 153, 255));
+        btnAtualizar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        btnAtualizar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAtualizar.setText("Atualizar");
+        btnAtualizar.setBorder(null);
+        btnAtualizar.setFocusable(false);
+        btnAtualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnLimparMouseEntered(evt);
+                btnAtualizarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnLimparMouseExited(evt);
+                btnAtualizarMouseExited(evt);
             }
         });
-        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimparActionPerformed(evt);
-            }
-        });
-
-        btnSalvar.setBackground(new java.awt.Color(102, 153, 255));
-        btnSalvar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalvar.setText("Salvar");
-        btnSalvar.setBorder(null);
-        btnSalvar.setFocusable(false);
-        btnSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnSalvarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnSalvarMouseExited(evt);
-            }
-        });
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
+                btnAtualizarActionPerformed(evt);
             }
         });
 
@@ -217,10 +197,7 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                                 .addGap(170, 170, 170)
                                 .addComponent(rdbSexoFeminino))
                             .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
-                                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
                                 .addComponent(txtCodigoCliente, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtSobreNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
@@ -265,49 +242,34 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                         .addComponent(rdbSexoMasculino)
                         .addComponent(rdbSexoFeminino)))
                 .addGap(18, 18, 18)
-                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(77, Short.MAX_VALUE))
         );
 
         getContentPane().add(jpnCadastroClientes, java.awt.BorderLayout.CENTER);
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalvarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvarMouseEntered
+    private void btnAtualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtualizarMouseEntered
         // Ao passar o mouse em cima
-        btnSalvar.setBackground(Color.red);
-    }//GEN-LAST:event_btnSalvarMouseEntered
+        btnAtualizar.setBackground(Color.red);
+    }//GEN-LAST:event_btnAtualizarMouseEntered
 
-    private void btnSalvarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvarMouseExited
+    private void btnAtualizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtualizarMouseExited
         // ao sair o mouse de cima do botão
-        btnSalvar.setBackground(new Color(102, 153, 255));
-    }//GEN-LAST:event_btnSalvarMouseExited
+        btnAtualizar.setBackground(new Color(102, 153, 255));
+    }//GEN-LAST:event_btnAtualizarMouseExited
 
-    private void btnLimparMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimparMouseEntered
-        btnLimpar.setBackground(Color.red);
-    }//GEN-LAST:event_btnLimparMouseEntered
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+          //Pegar os dados dos componentes e jogar na classe CadastroCliente
 
-    private void btnLimparMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimparMouseExited
-        btnLimpar.setBackground(new Color(102, 153, 255));
-    }//GEN-LAST:event_btnLimparMouseExited
-
-    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        limparCampos();
-    }//GEN-LAST:event_btnLimparActionPerformed
-
-    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        // jogar o que foi digitado nos atributos da classe cadastroCliente
-        CadastroCliente.codigo_cliente = txtCodigoCliente.getText();
-        CadastroCliente.nome_cliente = txtNome.getText();
         
+        
+        CadastroCliente.nome_cliente = txtNome.getText();
         CadastroCliente.sobrenome_cliente = txtSobreNome.getText();
         CadastroCliente.CPF_cliente = txtCPF.getText();
         CadastroCliente.idade_cliente = Integer.parseInt(txtIdade.getText());
-        
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         try {
             java.util.Date date = sdf.parse(txtDataNascimento.getText());
@@ -316,35 +278,103 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         } catch (ParseException ex){
             Logger.getLogger(FrmCadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
         if (rdbSexoMasculino.isSelected() == true){
             CadastroCliente.sexo_cliente = "M";
         }
         else{
             CadastroCliente.sexo_cliente = "F";
         }
+        CadastroCliente.codigo_cliente = txtCodigoCliente.getText();
         
-        CadastroClienteConexao cadcli = new CadastroClienteConexao();
-        cadcli.InserirCliente();
-        JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
-        limparCampos();
+        atualizarDados();
         
-    }//GEN-LAST:event_btnSalvarActionPerformed
+        JOptionPane.showMessageDialog(null, "Dados do cliente atualizado com Sucesso!");
+        
+
+    }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // Ao abrir o FrmCadastroCliente gerar o cod automatico
-        Date datasistema = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
-        String data = sdf.format(datasistema);
-        
-        //pegar a hora do sistema
-        Calendar horasistema = Calendar.getInstance();
-        txtCodigoCliente.setText(String.format(data + "%1$tH%1$tM%1$ts", horasistema));
+        // Buscar os dados quando iniciar o formulário
+        carregarJtable();
         
     }//GEN-LAST:event_formWindowOpened
 
+    //Metodo para buscar os dados selecionado no FrmMostrarCadastroCliente
+    public void carregarJtable(){
+        Connection conn = null;
+        ResultSet rs = null;
+        conn = Conexao.getConnection();//conectar ao banco
+        String sql = "SELECT * FROM tb_cadastro where id_tb_cadastro = '"+ CadastroCliente.id_tb_cadastro +"'";
+        
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.execute();
+            rs = stmt.executeQuery();
+            
+            rs.next();
+            
+            txtCodigoCliente.setText(rs.getString("codigo_cliente"));
+            txtNome.setText(rs.getString("nome"));
+            txtCPF.setText(rs.getString("CPF"));
+            txtSobreNome.setText(rs.getString("sobrenome"));
+            txtIdade.setText(rs.getString("idade"));
+            DateFormat data = new SimpleDateFormat("dd/MM/yyyy");
+            txtDataNascimento.setText(data.format(rs.getDate("data_nascimento")));
+           
+            String sexoCliente = rs.getString("sexo");
+            if (sexoCliente.equals("M")){
+                rdbSexoMasculino.setSelected(true);
+            }
+            else{
+                rdbSexoFeminino.setSelected(true);
+            }
+            
+            
+        } catch (SQLException ex) {
+            
+            JOptionPane.showMessageDialog(null, "Erro ao salvar no banco de dados.\n Erro: " + ex);
+        }
+    }
+    
+    public void atualizarDados(){
+        
+        Connection conn = null;
+        
+        conn = Conexao.getConnection();
+        
+        String sql = "";
+        
+        String SQL = "UPDATE tb_cadastro "
+                     + "SET nome = ?, sobrenome = ?, idade = ?, data_nascimento = ?, "
+                     + "sexo = ?, CPF = ? "
+                     + "WHERE codigo_cliente = ?;";
+
+        PreparedStatement stmt = null;  
+
+    
+    try {
+        
+        stmt = conn.prepareStatement(SQL);
+        stmt.setString(1, CadastroCliente.nome_cliente);
+        stmt.setString(2, CadastroCliente.sobrenome_cliente);
+        stmt.setInt(3, CadastroCliente.idade_cliente);
+        stmt.setDate(4, CadastroCliente.data_nascimento_cliente);
+        stmt.setString(5, CadastroCliente.sexo_cliente);
+        stmt.setString(6, CadastroCliente.CPF_cliente);
+        stmt.setString(7, CadastroCliente.codigo_cliente);
+
+        
+        stmt.executeUpdate();
+        
+
+    } catch (SQLException ex) {
+
+        JOptionPane.showMessageDialog(null, "Erro ao salvar no banco de dados.\n Erro: " + ex);
+    }
+    finally{
+        Conexao.fecharConexao(conn, stmt);
+    }
+    }
     public void limparCampos(){
         txtNome.setText("");
         txtSobreNome.setText("");
@@ -354,7 +384,6 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         txtDataNascimento.setText("");
         rdbSexoMasculino.setSelected(true);
     }
-    
     /**
      * @param args the command line arguments
      */
@@ -372,28 +401,26 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAtualizarCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAtualizarCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAtualizarCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAtualizarCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmCadastroCliente().setVisible(true);
+                new FrmAtualizarCadastro().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup bntGrupoSexo;
-    private javax.swing.JButton btnLimpar;
-    private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnAtualizar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

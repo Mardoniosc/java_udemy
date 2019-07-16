@@ -62,7 +62,7 @@ public class LoginConexao {
 
         
         //testar se o usuário é o mesmo digitado...
-        System.out.println(senha1 + Login.senha + usuario1 + Login.usuario);
+        // System.out.println(senha1 + Login.senha + usuario1 + Login.usuario);
         if ((usuario1.equals(Login.usuario)) && (senha1.equals(Login.senha))){
             FrmTelaPrincipal tp = new FrmTelaPrincipal();
             tp.setVisible(true);
