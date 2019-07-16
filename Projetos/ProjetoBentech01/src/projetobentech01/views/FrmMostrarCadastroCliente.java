@@ -102,10 +102,9 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
         setTitle("Clientes Cadastrados");
         setMaximumSize(new java.awt.Dimension(1250, 600));
         setMinimumSize(new java.awt.Dimension(1250, 600));
-        setPreferredSize(new java.awt.Dimension(1250, 600));
         addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
             }
         });
 
@@ -280,16 +279,6 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // Carrega os dados na JtableCadastroCliente quando abrir o FrmMostrarCadastroCliente:
-        String sql = "SELECT * FROM tb_cadastro ORDER BY id_tb_cadastro DESC";
-        
-        // CHAMAMOS O ÉTODO PARA PREECHER O JtableCdastroCliente
-        
-        preecheerJtable(sql);
-        
-    }//GEN-LAST:event_formWindowOpened
-
     private void txtPesquisaNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisaNomeKeyTyped
         // Pesquisa pelo Nome
         
@@ -357,6 +346,12 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jtableCadastroClienteMouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // atualiza as informações da Jtable:
+        String sql = "SELECT * FROM tb_cadastro ORDER BY id_tb_cadastro DESC";
+        preecheerJtable(sql);
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments

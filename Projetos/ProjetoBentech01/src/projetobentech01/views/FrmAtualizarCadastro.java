@@ -204,7 +204,7 @@ public class FrmAtualizarCadastro extends javax.swing.JFrame {
                                 .addComponent(txtIdade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
                                 .addComponent(txtDataNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtCPF, javax.swing.GroupLayout.Alignment.LEADING)))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnCadastroClientesLayout.setVerticalGroup(
             jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,12 +243,13 @@ public class FrmAtualizarCadastro extends javax.swing.JFrame {
                         .addComponent(rdbSexoFeminino)))
                 .addGap(18, 18, 18)
                 .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jpnCadastroClientes, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtualizarMouseEntered
@@ -264,8 +265,6 @@ public class FrmAtualizarCadastro extends javax.swing.JFrame {
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
           //Pegar os dados dos componentes e jogar na classe CadastroCliente
 
-        
-        
         CadastroCliente.nome_cliente = txtNome.getText();
         CadastroCliente.sobrenome_cliente = txtSobreNome.getText();
         CadastroCliente.CPF_cliente = txtCPF.getText();
@@ -290,7 +289,7 @@ public class FrmAtualizarCadastro extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null, "Dados do cliente atualizado com Sucesso!");
         
-
+        this.dispose();
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
