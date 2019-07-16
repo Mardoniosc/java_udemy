@@ -326,9 +326,43 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeletarMouseExited
 
     private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
-        // TODO add your handling code here:
+        // Deletar a linha escolhida na Jtable
+        if (txtNControle.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Nenhum item selecionado para deletar!");
+        }
+        else{
+            CadastroCliente.id_tb_cadastro = Integer.parseInt(txtNControle.getText());
+            
+            int respostaJoptionPane = JOptionPane.OK_CANCEL_OPTION;
+            respostaJoptionPane = JOptionPane.showConfirmDialog(null, "Deseja realmente apagar esse cadastro?", "Apagar cadastro", respostaJoptionPane);
+            if (respostaJoptionPane == JOptionPane.OK_OPTION) {
+                deletarLinhaDados(); // Metodo para apagar
+                JOptionPane.showMessageDialog(null, "Cadastro Deletado com sucesso!");
+               
+            }
+        }
+        
     }//GEN-LAST:event_btnDeletarActionPerformed
 
+    // metodo para deletar a linha e consequentimente os dados escolhidos no banco de dados
+    public void deletarLinhaDados(){
+        conn = Conexao.getConnection();//conecta ao banco de dados
+        
+        String sql = "DELETE FROM  tb_cadastro " +
+                     "WHERE id_tb_cadastro = ?;";
+        
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, CadastroCliente.id_tb_cadastro);
+            stmt.executeUpdate();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Não foi possível deletar o registro do banco de dados\nErro: " + ex);
+        }
+    }
+    
     private void txtNControleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNControleKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNControleKeyTyped

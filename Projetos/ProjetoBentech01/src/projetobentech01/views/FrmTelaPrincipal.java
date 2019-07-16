@@ -34,6 +34,7 @@ public class FrmTelaPrincipal extends javax.swing.JFrame {
         btnBucarCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela Principal");
 
         jpnPrincipal.setBackground(new java.awt.Color(51, 51, 51));
 

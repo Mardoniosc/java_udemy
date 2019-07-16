@@ -167,6 +167,7 @@ public class FrmLogin extends javax.swing.JFrame {
         LoginConexao lg = new LoginConexao();
         //lg.InserirUsuário();
         lg.verificarUsuario();
+        this.dispose();
     }//GEN-LAST:event_btnLogarActionPerformed
 
     private void btnLogarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogarMouseEntered

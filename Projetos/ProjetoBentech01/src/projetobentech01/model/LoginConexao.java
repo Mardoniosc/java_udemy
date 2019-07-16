@@ -70,6 +70,7 @@ public class LoginConexao {
         }
         else{
             JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos!");
+            
         }
     } catch (SQLException ex) {
 
