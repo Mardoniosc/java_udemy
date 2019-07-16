@@ -16,9 +16,14 @@ import java.sql.SQLException;
 public class Conexao {
     
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://DF7562NT713:3306/sd_chamados";
+    
+    /*    private static final String URL = "jdbc:mysql://DF7562NT713:3306/sd_chamados";
     private static final String USER = "sd";        //nome de um usuário de seu BD      
     private static final String PASS = "sd";      //sua senha de acesso
+  */  
+    private static final String URL = "jdbc:mysql://192.168.0.100:3306/RegistroDB";
+    private static final String USER = "admin";        //nome de um usuário de seu BD      
+    private static final String PASS = "rktd*77Imo";      //sua senha de acesso
 
     public static Connection getConnection(){
         try {

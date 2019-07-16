@@ -45,7 +45,7 @@ public class LoginConexao {
 }
     
     public void verificarUsuario(){
-    String SQL = "SELECT usuario, senha FROM sd_chamados.tb_login where usuario = '" +Login.usuario +"'";
+    String SQL = "SELECT usuario, senha FROM tb_login where usuario = '" +Login.usuario +"'";
     Connection conn = null;
     conn = Conexao.getConnection();//Conectar ao banco de datos
     PreparedStatement stmt = null;

@@ -43,7 +43,6 @@ public class FrmLogin extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(500, 700));
         setMinimumSize(new java.awt.Dimension(500, 700));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(500, 700));
 
         jpnPrincipal.setBackground(new java.awt.Color(51, 51, 51));
 
