@@ -117,7 +117,7 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
         jPanel1.setName(""); // NOI18N
 
         jtableCadastroCliente.setBackground(new java.awt.Color(51, 51, 51));
-        jtableCadastroCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jtableCadastroCliente.setForeground(new java.awt.Color(102, 102, 102));
         jtableCadastroCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -134,6 +134,7 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtableCadastroCliente.setGridColor(new java.awt.Color(102, 102, 102));
         jtableCadastroCliente.setSelectionBackground(new java.awt.Color(102, 153, 255));
         jtableCadastroCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
