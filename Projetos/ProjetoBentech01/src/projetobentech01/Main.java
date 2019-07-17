@@ -5,7 +5,7 @@
  */
 package projetobentech01;
 
-import projetobentech01.views.FrmLogin;
+import projetobentech01.views.FrmSplash;
 
 /**
  *
@@ -19,10 +19,16 @@ public class Main {
     public static void main(String[] args) {
         // Chamar a tela principal para iniciar nosso proigrama
         
-        FrmLogin frml = new FrmLogin();
+        // FrmLogin frml = new FrmLogin();
         
         // Chamar a tela
-        frml.setVisible(true);
+        //frml.setVisible(true);
+        
+        //chmar a tela splash
+        FrmSplash frms = new FrmSplash();
+        frms.setVisible(true);
+        
+        
     }
     
 }

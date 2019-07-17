@@ -32,11 +32,14 @@ public class FrmTelaPrincipal extends javax.swing.JFrame {
         jpnPrincipal = new javax.swing.JPanel();
         btnCadastro = new javax.swing.JButton();
         btnBucarCliente = new javax.swing.JButton();
+        lblFechar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Principal");
+        setUndecorated(true);
 
         jpnPrincipal.setBackground(new java.awt.Color(51, 51, 51));
+        jpnPrincipal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
 
         btnCadastro.setBackground(new java.awt.Color(102, 153, 255));
         btnCadastro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -78,6 +81,15 @@ public class FrmTelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        lblFechar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblFechar.setForeground(new java.awt.Color(255, 255, 255));
+        lblFechar.setText("X");
+        lblFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFecharMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpnPrincipalLayout = new javax.swing.GroupLayout(jpnPrincipal);
         jpnPrincipal.setLayout(jpnPrincipalLayout);
         jpnPrincipalLayout.setHorizontalGroup(
@@ -87,16 +99,22 @@ public class FrmTelaPrincipal extends javax.swing.JFrame {
                 .addGroup(jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBucarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(659, Short.MAX_VALUE))
+                .addContainerGap(653, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblFechar)
+                .addContainerGap())
         );
         jpnPrincipalLayout.setVerticalGroup(
             jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnPrincipalLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addContainerGap()
+                .addComponent(lblFechar)
+                .addGap(23, 23, 23)
                 .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
                 .addComponent(btnBucarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(400, Short.MAX_VALUE))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
 
         getContentPane().add(jpnPrincipal, java.awt.BorderLayout.CENTER);
@@ -132,6 +150,11 @@ public class FrmTelaPrincipal extends javax.swing.JFrame {
         FrmMostrarCadastroCliente frmc = new FrmMostrarCadastroCliente();
         frmc.setVisible(true);
     }//GEN-LAST:event_btnBucarClienteActionPerformed
+
+    private void lblFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFecharMouseClicked
+        // Fechar a aplicação quando clicar o mouse
+        System.exit(0);
+    }//GEN-LAST:event_lblFecharMouseClicked
 
     /**
      * @param args the command line arguments
@@ -172,5 +195,6 @@ public class FrmTelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnBucarCliente;
     private javax.swing.JButton btnCadastro;
     private javax.swing.JPanel jpnPrincipal;
+    private javax.swing.JLabel lblFechar;
     // End of variables declaration//GEN-END:variables
 }

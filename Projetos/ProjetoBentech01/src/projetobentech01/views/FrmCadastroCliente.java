@@ -60,9 +60,11 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         btnLimpar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         txtCPF = new javax.swing.JFormattedTextField();
+        lblFechar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Clientes");
+        setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -70,6 +72,7 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         });
 
         jpnCadastroClientes.setBackground(new java.awt.Color(51, 51, 51));
+        jpnCadastroClientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -193,6 +196,15 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        lblFechar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblFechar.setForeground(new java.awt.Color(255, 255, 255));
+        lblFechar.setText("X");
+        lblFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFecharMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpnCadastroClientesLayout = new javax.swing.GroupLayout(jpnCadastroClientes);
         jpnCadastroClientes.setLayout(jpnCadastroClientesLayout);
         jpnCadastroClientesLayout.setHorizontalGroup(
@@ -200,7 +212,10 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
             .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
+                    .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblFechar))
                     .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
                         .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -216,24 +231,28 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                                 .addComponent(rdbSexoMasculino)
                                 .addGap(170, 170, 170)
                                 .addComponent(rdbSexoFeminino))
-                            .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
-                                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                                .addComponent(txtCodigoCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtSobreNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                                .addComponent(txtIdade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                                .addComponent(txtDataNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCPF, javax.swing.GroupLayout.Alignment.LEADING)))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                            .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
+                                        .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                                    .addComponent(txtCodigoCliente, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtSobreNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                                    .addComponent(txtDataNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCPF, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addGap(0, 9, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jpnCadastroClientesLayout.setVerticalGroup(
             jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(lblFechar))
                 .addGap(18, 18, 18)
                 .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -265,10 +284,10 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                         .addComponent(rdbSexoMasculino)
                         .addComponent(rdbSexoFeminino)))
                 .addGap(18, 18, 18)
-                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         getContentPane().add(jpnCadastroClientes, java.awt.BorderLayout.CENTER);
@@ -329,7 +348,7 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         CadastroClienteConexao cadcli = new CadastroClienteConexao();
         cadcli.InserirCliente();
         JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
-        limparCampos();
+        this.dispose();
         
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -344,6 +363,11 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         txtCodigoCliente.setText(String.format(data + "%1$tH%1$tM%1$ts", horasistema));
         
     }//GEN-LAST:event_formWindowOpened
+
+    private void lblFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFecharMouseClicked
+        // Fechar a aplicação quando clicar o mouse
+        this.dispose();
+    }//GEN-LAST:event_lblFecharMouseClicked
 
     public void limparCampos(){
         txtNome.setText("");
@@ -403,6 +427,7 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jpnCadastroClientes;
+    private javax.swing.JLabel lblFechar;
     private javax.swing.JRadioButton rdbSexoFeminino;
     private javax.swing.JRadioButton rdbSexoMasculino;
     private javax.swing.JFormattedTextField txtCPF;

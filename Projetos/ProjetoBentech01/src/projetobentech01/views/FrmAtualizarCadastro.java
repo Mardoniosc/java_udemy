@@ -61,11 +61,13 @@ public class FrmAtualizarCadastro extends javax.swing.JFrame {
         txtDataNascimento = new javax.swing.JFormattedTextField();
         btnAtualizar = new javax.swing.JButton();
         txtCPF = new javax.swing.JFormattedTextField();
+        lblFechar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Atualiza dados");
         setMaximumSize(new java.awt.Dimension(657, 472));
         setMinimumSize(new java.awt.Dimension(657, 472));
+        setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -73,6 +75,7 @@ public class FrmAtualizarCadastro extends javax.swing.JFrame {
         });
 
         jpnCadastroClientes.setBackground(new java.awt.Color(51, 51, 51));
+        jpnCadastroClientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,44 +176,61 @@ public class FrmAtualizarCadastro extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        lblFechar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblFechar.setForeground(new java.awt.Color(255, 255, 255));
+        lblFechar.setText("X");
+        lblFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFecharMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpnCadastroClientesLayout = new javax.swing.GroupLayout(jpnCadastroClientes);
         jpnCadastroClientes.setLayout(jpnCadastroClientesLayout);
         jpnCadastroClientesLayout.setHorizontalGroup(
             jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnCadastroClientesLayout.createSequentialGroup()
+                        .addGap(451, 451, 451)
+                        .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel7))
-                        .addGap(39, 39, 39)
-                        .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
                             .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
-                                .addComponent(rdbSexoMasculino)
-                                .addGap(170, 170, 170)
-                                .addComponent(rdbSexoFeminino))
-                            .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                                .addComponent(txtCodigoCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtSobreNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                                .addComponent(txtIdade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                                .addComponent(txtDataNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCPF, javax.swing.GroupLayout.Alignment.LEADING)))))
+                                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel7))
+                                .addGap(39, 39, 39)
+                                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
+                                        .addComponent(rdbSexoMasculino)
+                                        .addGap(170, 170, 170)
+                                        .addComponent(rdbSexoFeminino))
+                                    .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lblFechar)
+                                        .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                                            .addComponent(txtCodigoCliente, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtSobreNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                                            .addComponent(txtIdade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+                                            .addComponent(txtDataNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnCadastroClientesLayout.setVerticalGroup(
             jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnCadastroClientesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(lblFechar))
                 .addGap(18, 18, 18)
                 .addGroup(jpnCadastroClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -297,6 +317,11 @@ public class FrmAtualizarCadastro extends javax.swing.JFrame {
         carregarJtable();
         
     }//GEN-LAST:event_formWindowOpened
+
+    private void lblFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFecharMouseClicked
+        // Fechar a aplicação quando clicar o mouse
+        this.dispose();
+    }//GEN-LAST:event_lblFecharMouseClicked
 
     //Metodo para buscar os dados selecionado no FrmMostrarCadastroCliente
     public void carregarJtable(){
@@ -429,6 +454,7 @@ public class FrmAtualizarCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jpnCadastroClientes;
+    private javax.swing.JLabel lblFechar;
     private javax.swing.JRadioButton rdbSexoFeminino;
     private javax.swing.JRadioButton rdbSexoMasculino;
     private javax.swing.JFormattedTextField txtCPF;

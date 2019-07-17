@@ -97,11 +97,13 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
         btnDeletar = new javax.swing.JButton();
         txtNControle = new javax.swing.JTextField();
         txtNomeControle = new javax.swing.JTextField();
+        lblFechar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Clientes Cadastrados");
         setMaximumSize(new java.awt.Dimension(1250, 600));
         setMinimumSize(new java.awt.Dimension(1250, 600));
+        setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -109,6 +111,7 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
         jPanel1.setMaximumSize(new java.awt.Dimension(900, 600));
         jPanel1.setMinimumSize(new java.awt.Dimension(900, 600));
         jPanel1.setName(""); // NOI18N
@@ -227,11 +230,19 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
             }
         });
 
+        lblFechar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        lblFechar.setForeground(new java.awt.Color(255, 255, 255));
+        lblFechar.setText("X");
+        lblFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFecharMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,17 +250,20 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPesquisaCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
+                    .addComponent(txtPesquisaCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
                     .addComponent(txtPesquisaNome))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNControle, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNomeControle, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtNControle, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                    .addComponent(txtNomeControle))
+                .addGap(18, 18, 18)
+                .addComponent(lblFechar)
+                .addContainerGap())
+            .addComponent(jScrollPane1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,7 +274,8 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnAtualizar)
                         .addComponent(txtNControle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtPesquisaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtPesquisaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblFechar)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -268,9 +283,8 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
                         .addComponent(btnDeletar)
                         .addComponent(txtNomeControle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtPesquisaCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -338,6 +352,10 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
             if (respostaJoptionPane == JOptionPane.OK_OPTION) {
                 deletarLinhaDados(); // Metodo para apagar
                 JOptionPane.showMessageDialog(null, "Cadastro Deletado com sucesso!");
+                
+            txtNControle.setText("");
+            txtNomeControle.setText("");
+            
                
             }
         }
@@ -387,6 +405,11 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
         preecheerJtable(sql);
     }//GEN-LAST:event_formWindowActivated
 
+    private void lblFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFecharMouseClicked
+        // Fechar a aplicação quando clicar o mouse
+        this.dispose();
+    }//GEN-LAST:event_lblFecharMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -430,6 +453,7 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jtableCadastroCliente;
+    private javax.swing.JLabel lblFechar;
     private javax.swing.JTextField txtNControle;
     private javax.swing.JTextField txtNomeControle;
     private javax.swing.JTextField txtPesquisaCPF;

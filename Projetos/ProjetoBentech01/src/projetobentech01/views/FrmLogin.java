@@ -45,6 +45,7 @@ public class FrmLogin extends javax.swing.JFrame {
         setUndecorated(true);
 
         jpnPrincipal.setBackground(new java.awt.Color(51, 51, 51));
+        jpnPrincipal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,7 +110,7 @@ public class FrmLogin extends javax.swing.JFrame {
                     .addGroup(jpnPrincipalLayout.createSequentialGroup()
                         .addGap(166, 166, 166)
                         .addComponent(lblLogoTipo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                         .addComponent(lblFechar))
                     .addGroup(jpnPrincipalLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -140,7 +141,7 @@ public class FrmLogin extends javax.swing.JFrame {
                 .addComponent(pswSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79)
                 .addComponent(btnLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         getContentPane().add(jpnPrincipal, java.awt.BorderLayout.CENTER);
