@@ -5,6 +5,13 @@
  */
 package projetobentech01.views;
 import java.awt.Color;
+import java.util.Hashtable;
+import javax.naming.AuthenticationException;
+import javax.naming.Context;
+import javax.naming.NamingException;
+import javax.naming.directory.DirContext;
+import javax.naming.directory.InitialDirContext;
+import javax.swing.JOptionPane;
 import projetobentech01.model.Login;
 import projetobentech01.model.LoginConexao;
 
@@ -151,7 +158,8 @@ public class FrmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void pswSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswSenhaActionPerformed
-        // TODO add your handling code here:
+        // Quando der enter clicar no botão logar:
+        btnLogar.doClick();
     }//GEN-LAST:event_pswSenhaActionPerformed
 
     private void lblFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFecharMouseClicked
@@ -159,16 +167,62 @@ public class FrmLogin extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_lblFecharMouseClicked
 
+    public boolean AutenticacaoAD(){
+        String userName = Login.usuario + "@corp.caixa.gov.br";
+        String newPassword = Login.senha;
+
+        Hashtable authEnv = new Hashtable(11);
+
+        authEnv.put(Context.INITIAL_CONTEXT_FACTORY,"com.sun.jndi.ldap.LdapCtxFactory");
+        authEnv.put(Context.PROVIDER_URL, "ldap://corp.caixa.gov.br:389");
+        authEnv.put(Context.SECURITY_AUTHENTICATION, "simple");
+        authEnv.put(Context.SECURITY_PRINCIPAL, userName);
+        authEnv.put(Context.SECURITY_CREDENTIALS, newPassword);
+
+       try{
+           DirContext authContext = new InitialDirContext(authEnv);
+           //System.out.println("Autenticado!");
+           return true;
+
+        }
+        catch (AuthenticationException authEx){
+            JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos!");
+            //authEx.printStackTrace();
+            return false;
+        }
+        catch (NamingException namEx){
+            JOptionPane.showMessageDialog(null, "Problemas na conexão");
+            //namEx.getCause().printStackTrace();
+            return false;
+        }
+        
+        
+    }
+    
     private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogarActionPerformed
         // quando clicar no botão logar verificar se usuário e senha existe 
         // e logar caso positivo
         
+        
+        
         Login.usuario = txtUsuario.getText();
         Login.senha = new String(pswSenha.getPassword());
-        LoginConexao lg = new LoginConexao();
-        //lg.InserirUsuário();
-        lg.verificarUsuario();
-        this.dispose();
+        
+        if (Login.usuario.equals("") || Login.senha.equals("")){
+            JOptionPane.showMessageDialog(null, "Favor preencher todos os campos para logar no sistema!");
+        }
+        else{
+            boolean autenticado = AutenticacaoAD();
+            if (autenticado == true){
+                FrmTelaPrincipal tp = new FrmTelaPrincipal();
+                tp.setVisible(true);
+                this.dispose();
+            }
+        }
+//        LoginConexao lg = new LoginConexao();
+//        //lg.InserirUsuário();
+//        lg.verificarUsuario();
+//        this.dispose();
     }//GEN-LAST:event_btnLogarActionPerformed
 
     private void btnLogarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogarMouseEntered

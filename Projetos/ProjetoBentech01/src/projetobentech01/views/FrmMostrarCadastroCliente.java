@@ -329,6 +329,9 @@ public class FrmMostrarCadastroCliente extends javax.swing.JFrame {
             frmat.setVisible(true);
             CadastroCliente.id_tb_cadastro = Integer.parseInt(txtNControle.getText());
         }
+        
+        txtNControle.setText("");
+        txtNomeControle.setText("");
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnDeletarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletarMouseEntered
