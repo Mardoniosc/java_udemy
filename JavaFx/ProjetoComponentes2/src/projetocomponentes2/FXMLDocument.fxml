@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="641.0" prefWidth="777.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projetocomponentes2.FXMLDocumentController">
+   <children>
+      <JFXColorPicker layoutX="99.0" layoutY="100.0" />
+      <JFXSlider layoutX="129.0" layoutY="206.0" />
+      <JFXTextField layoutX="245.0" layoutY="113.0" promptText="Teste" />
+      <JFXToggleButton layoutX="426.0" layoutY="96.0" text="Lampada" />
+      <JFXTextField layoutX="409.0" layoutY="242.0" promptText="Mardonio" />
+   </children>
+</AnchorPane>
