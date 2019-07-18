@@ -97,7 +97,7 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         });
 
-        lblLogoTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetobentech01/imagens/icons8_m_128px.png"))); // NOI18N
+        lblLogoTipo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetobentech01/imagens/icons8_south_80px.png"))); // NOI18N
 
         lblFechar.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         lblFechar.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,9 +115,7 @@ public class FrmLogin extends javax.swing.JFrame {
             .addGroup(jpnPrincipalLayout.createSequentialGroup()
                 .addGroup(jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnPrincipalLayout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(lblLogoTipo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblFechar))
                     .addGroup(jpnPrincipalLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -130,15 +128,19 @@ public class FrmLogin extends javax.swing.JFrame {
                                 .addComponent(txtUsuario, javax.swing.GroupLayout.Alignment.LEADING)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jpnPrincipalLayout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addComponent(lblLogoTipo)
+                .addContainerGap(230, Short.MAX_VALUE))
         );
         jpnPrincipalLayout.setVerticalGroup(
             jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLogoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFechar))
-                .addGap(26, 26, 26)
+                .addComponent(lblFechar)
+                .addGap(11, 11, 11)
+                .addComponent(lblLogoTipo)
+                .addGap(58, 58, 58)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
