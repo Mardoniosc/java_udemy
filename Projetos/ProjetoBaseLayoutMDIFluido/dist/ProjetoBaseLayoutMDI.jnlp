@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ProjetoBaseLayoutMDI.jnlp">
+  <information>
+    <title>ProjetoBaseLayoutMDI</title>
+    <vendor>MVM</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ProjetoBaseLayoutMDI.jar" size="14157" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ProjetoBaseLayoutMDI" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="projetobaselayoutmdi.ProjetoBaseLayoutMDI"  name="ProjetoBaseLayoutMDI" />
+  <update check="always"/>
+</jnlp>

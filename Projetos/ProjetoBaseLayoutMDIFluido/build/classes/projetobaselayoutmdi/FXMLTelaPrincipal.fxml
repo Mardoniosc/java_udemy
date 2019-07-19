@@ -16,9 +16,9 @@
    <children>
       <SplitPane dividerPositions="0.2" layoutX="164.0" layoutY="320.0" prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane fx:id="apMenuDireito" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane fx:id="apMenuDireito" maxWidth="196.0" minHeight="0.0" minWidth="196.0" prefHeight="160.0" prefWidth="196.0">
                <children>
-                  <VBox layoutX="89.0" layoutY="281.0" prefHeight="798.0" prefWidth="197.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox layoutX="89.0" layoutY="281.0" maxWidth="196.0" minWidth="196.0" prefHeight="798.0" prefWidth="196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <ImageView fx:id="imgLogoTipo" fitHeight="93.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -30,6 +30,7 @@
                         </ImageView>
                         <Button fx:id="btnMDI1" mnemonicParsing="false" prefHeight="73.0" prefWidth="197.0" text="MDI 1" />
                         <Button fx:id="btnMDI2" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="197.0" text="MDI 2" />
+                        <Button fx:id="btnChamarFXMLExterno" mnemonicParsing="false" prefHeight="73.0" prefWidth="197.0" text="MDI 3" />
                      </children>
                   </VBox>
                </children>
