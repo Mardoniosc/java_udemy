@@ -1,0 +1,28 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+/*Mudar o background da tab*/
+.tab{
+    -fx-background-color: #2A2A2A;
+}
+
+.tab-header-background{
+    -fx-background-color: #2A2A2A;
+}
+
+.jfx-tab-pane{
+    -fx-background-color: #2A2A2A;
+}
+
+/*Mudar cor de textFiled e password*/
+
+.jfx-text-field, .jfx-password-field, .jfx-text-area{
+    -fx-prompt-text-fill: white;
+    -jfx-focus-color: ORANGE;
+    -jfx-unfocus-color: YELLOW;
+    -fx-text-inner-color: WHITE;
+}

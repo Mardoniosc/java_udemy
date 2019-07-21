@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -24,6 +25,8 @@ public class main extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        //Para retirar todos os botão Minimizar maximilizar e fechar
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
 
@@ -31,6 +34,7 @@ public class main extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         launch(args);
     }
     

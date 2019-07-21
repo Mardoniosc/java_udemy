@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="798.0" maxWidth="940.0" minHeight="798.0" minWidth="940.0" prefHeight="798.0" prefWidth="940.0" style="-fx-background-color: blue;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoimob.view.FXMLRelatoriosController">
+    <stylesheets>
+        <URL value="@fxmlrelatorios.css" />
+    </stylesheets>
+</AnchorPane>
