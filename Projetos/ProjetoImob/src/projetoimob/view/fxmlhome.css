@@ -6,3 +6,9 @@
 -fx-background-color: green;
 }
 
+.jfx-text-field, .jfx-password-field, .jfx-text-area{
+    -fx-prompt-text-fill: white;
+    -jfx-focus-color: ORANGE;
+    -jfx-unfocus-color: YELLOW;
+    -jfx-text-inner-color: WHITE;
+}
