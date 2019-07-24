@@ -31,21 +31,43 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <JFXTextField labelFloat="true" layoutX="24.0" layoutY="30.0" promptText="Código Cliente">
+                              <JFXTextField fx:id="txtCodigoCliente" labelFloat="true" layoutX="24.0" layoutY="30.0" promptText="Código Cliente">
                                  <font>
                                     <Font name="Century Gothic Bold Italic" size="18.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField labelFloat="true" layoutX="24.0" layoutY="90.0" maxWidth="316.0" minWidth="316.0" prefHeight="41.0" prefWidth="316.0" promptText="Nome Cliente">
+                              <JFXTextField fx:id="txtNomeCliente" labelFloat="true" layoutX="24.0" layoutY="90.0" maxWidth="316.0" minWidth="316.0" prefHeight="41.0" prefWidth="316.0" promptText="Nome Cliente">
                                  <font>
                                     <Font name="Century Gothic Bold Italic" size="18.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField labelFloat="true" layoutX="25.0" layoutY="151.0" maxWidth="314.0" minWidth="314.0" prefHeight="41.0" prefWidth="314.0" promptText="Sobrenome Cliente">
+                              <JFXTextField fx:id="txtSobrenomeCliente" labelFloat="true" layoutX="24.0" layoutY="151.0" maxWidth="314.0" minWidth="314.0" prefHeight="41.0" prefWidth="314.0" promptText="Sobrenome Cliente">
                                  <font>
                                     <Font name="Century Gothic Bold Italic" size="18.0" />
                                  </font>
                               </JFXTextField>
+                              <JFXTextField fx:id="txtCPFCliente" labelFloat="true" layoutX="24.0" layoutY="224.0" maxWidth="314.0" minWidth="314.0" prefHeight="41.0" prefWidth="314.0" promptText="CPF Cliente">
+                                 <font>
+                                    <Font name="Century Gothic Bold Italic" size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="txtRGCliente" labelFloat="true" layoutX="26.0" layoutY="287.0" maxWidth="314.0" minWidth="314.0" prefHeight="41.0" prefWidth="314.0" promptText="RG Cliente">
+                                 <font>
+                                    <Font name="Century Gothic Bold Italic" size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXRadioButton fx:id="rdbSexoM" layoutX="26.0" layoutY="354.0" selected="true" styleClass="jfx-radio-button" text="Masculino" textFill="WHITE">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sexo" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="rdbSexoF" layoutX="206.0" layoutY="352.0" text="Feminino" textFill="WHITE" toggleGroup="$sexo">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></JFXRadioButton>
                            </children>
                         </AnchorPane>
                     </content>
@@ -56,13 +78,6 @@
                            <effect>
                               <DropShadow />
                            </effect>
-                           <children>
-                              <JFXTextField labelFloat="true" layoutX="326.0" layoutY="139.0" promptText="Código endereço">
-                                 <font>
-                                    <Font name="Century Gothic Bold Italic" size="18.0" />
-                                 </font>
-                              </JFXTextField>
-                           </children>
                         </AnchorPane>
                     </content>
                   </Tab>
@@ -70,7 +85,7 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <JFXTextField labelFloat="true" maxWidth="245.0" minWidth="245.0" prefHeight="38.0" prefWidth="245.0" promptText="Código dados adicionais">
+                              <JFXTextField fx:id="txtCodigoAdicionais" labelFloat="true" layoutX="19.0" layoutY="20.0" maxWidth="245.0" minWidth="245.0" prefHeight="38.0" prefWidth="245.0" promptText="Código dados adicionais">
                                  <font>
                                     <Font name="Century Gothic Bold Italic" size="18.0" />
                                  </font>

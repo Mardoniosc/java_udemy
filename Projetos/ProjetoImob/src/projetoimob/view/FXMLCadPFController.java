@@ -4,11 +4,14 @@
 package projetoimob.view;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTabPane;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
@@ -31,6 +34,24 @@ public class FXMLCadPFController implements Initializable {
     private JFXButton bntSalvar;
     @FXML
     private JFXButton bntLimpar;
+    @FXML
+    private JFXTextField txtCodigoCliente;
+    @FXML
+    private JFXTextField txtNomeCliente;
+    @FXML
+    private JFXTextField txtSobrenomeCliente;
+    @FXML
+    private JFXTextField txtCPFCliente;
+    @FXML
+    private JFXTextField txtRGCliente;
+    @FXML
+    private JFXRadioButton rdbSexoM;
+    @FXML
+    private ToggleGroup sexo;
+    @FXML
+    private JFXRadioButton rdbSexoF;
+    @FXML
+    private JFXTextField txtCodigoAdicionais;
 
 
 

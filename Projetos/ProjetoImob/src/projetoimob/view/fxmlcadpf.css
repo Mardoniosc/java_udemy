@@ -20,9 +20,11 @@
 
 /*Mudar cor de textFiled e password*/
 
-.jfx-text-field, .jfx-password-field, .jfx-text-area{
+.jfx-text-field, .jfx-password-field, .jfx-text-area, .jfx-radio-button{
     -fx-prompt-text-fill: white;
     -jfx-focus-color: ORANGE;
     -jfx-unfocus-color: YELLOW;
-    -fx-text-inner-color: WHITE;
+    -jfx-text-inner-color: WHITE;
+    -jfx-selected-color: ORANGE;
+    -jfx-unselected-color: WHITE;
 }
