@@ -4,6 +4,7 @@
 package projetoimob.view;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTabPane;
 import com.jfoenix.controls.JFXTextField;
@@ -52,6 +53,8 @@ public class FXMLCadPFController implements Initializable {
     private JFXRadioButton rdbSexoF;
     @FXML
     private JFXTextField txtCodigoAdicionais;
+    @FXML
+    private JFXComboBox<String> cmbEstado;
 
 
 
@@ -60,7 +63,10 @@ public class FXMLCadPFController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        cmbEstado.getItems().add("DF");
+        cmbEstado.getItems().add("GO");
+        cmbEstado.getItems().add("SP");
+        
     }    
     
 }

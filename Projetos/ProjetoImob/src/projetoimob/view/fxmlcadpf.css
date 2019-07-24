@@ -28,3 +28,10 @@
     -jfx-selected-color: ORANGE;
     -jfx-unselected-color: WHITE;
 }
+
+.jfx-combo-box .cell{
+    -fx-background-color: #2A2A2A;
+    -fx-text-fill: white;
+    
+
+}
