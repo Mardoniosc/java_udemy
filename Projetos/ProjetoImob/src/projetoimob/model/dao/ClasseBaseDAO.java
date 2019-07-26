@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import projetoimob.model.domain.ClientePessoaFisica;
+import projetoimob.model.DTO.ClientePessoaFisica;
 
 /**
  *

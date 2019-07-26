@@ -28,8 +28,8 @@ import javax.swing.JOptionPane;
 import projetoimob.model.dao.EstadosDAO;
 import projetoimob.model.database.DataBase;
 import projetoimob.model.database.DataBaseFactory;
-import projetoimob.model.domain.Bairro;
-import projetoimob.model.domain.Estados;
+import projetoimob.model.DTO.Bairro;
+import projetoimob.model.DTO.Estados;
 
 /**
  * FXML Controller class
