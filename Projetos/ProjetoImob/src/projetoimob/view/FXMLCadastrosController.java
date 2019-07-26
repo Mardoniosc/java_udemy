@@ -18,40 +18,41 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
  *
- * @author MVM
+ * @author fschi
  */
 public class FXMLCadastrosController implements Initializable {
 
     @FXML
-    private Button btnCadImoUrb;
+    private Button btnCadCliPF;
     @FXML
-    private Button btnCadImobiliarias;
-    @FXML
-    private Button btnCadCorretores;
-    @FXML
-    private Button btnCadImoRur;
-    @FXML
-    private Button btnCadCliePF;
+    private Button btnCadImoUr;
     @FXML
     private Button btnCadCliPJ;
     @FXML
-    private Button btnCadCidades;
+    private Button btnCadImovRu;
     @FXML
-    private Button btnCadLogra;
+    private Button btnCadCorretor;
+    @FXML
+    private Button btnCadImobiliaria;
+    @FXML
+    private Button btnCadFuncionairo;
     @FXML
     private Button btnCadPrestServ;
     @FXML
-    private Button btnCadEstados;
-    @FXML
-    private Button btnCadBairros;
-    @FXML
     private Button btnCadLogin;
     @FXML
-    private Button btnCadFunc;
+    private Button btnCadLog;
+    @FXML
+    private Button btnCadBairro;
+    @FXML
+    private Button btnCadCidade;
+    @FXML
+    private Button btnCadEstado;
 
     /**
      * Initializes the controller class.
@@ -60,22 +61,57 @@ public class FXMLCadastrosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-    @FXML
-    private void abrirFXMLCadPF(ActionEvent event) {
-        try {
-                    Stage stage = new Stage();
-                    Parent root = FXMLLoader.load(getClass().getResource("FXMLCadPF.fxml"));
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
-                    
-                } catch (IOException ex) {
-                    Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
-                }
 
-        
+    @FXML//método para abrir o FXMLCadPF
+    private void abrirFXMLCadPF(ActionEvent event)
+    {
+        try
+        {
+            Stage stage = new Stage();
+
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLCadPF.fxml"));
+
+            Scene scene = new Scene(root);
+            
+            //para retirar todos os botões de minimizar, maximizar e fechar
+            stage.initStyle(StageStyle.UNDECORATED);
+
+            stage.setScene(scene);
+
+            stage.show();//abria a stage
+
+        } 
+        catch (IOException ex)
+        {
+            Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-}
+   
 
+    @FXML
+    private void abrirFXMLCadEstados(ActionEvent event) {
+        
+         try
+        {
+            Stage stageCadEstados = new Stage();
+
+            Parent rootCadEstados = FXMLLoader.load(getClass().getResource("FXMLCadEstados.fxml"));
+
+            Scene sceneCadEstados = new Scene(rootCadEstados);
+            
+            //para retirar todos os botões de minimizar, maximizar e fechar
+            stageCadEstados.initStyle(StageStyle.UNDECORATED);
+
+            stageCadEstados.setScene(sceneCadEstados);
+
+            stageCadEstados.show();//abria a stage
+
+        } 
+        catch (IOException ex)
+        {
+            Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+}

@@ -22,7 +22,7 @@ public class DataBaseMySQL implements DataBase{
     public Connection conectar() {
         try {
                 Class.forName("com.mysql.jdbc.Driver");
-                this.connection = DriverManager.getConnection("jdbc:mysql://DF7562NT713:3306/sd_chamados", "sd", "sd");
+                this.connection = DriverManager.getConnection("jdbc:mysql://DF7562NT713:3306/bd_imob", "sd", "sd");
                 return this.connection;
             } catch (SQLException | ClassNotFoundException ex) {
                 JOptionPane.showMessageDialog(null, "Não foi possivel conectar "

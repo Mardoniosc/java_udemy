@@ -16,13 +16,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
  *
- * @author MVM
+ * @author fschi
  */
 public class FXMLTelaPrincipalController implements Initializable {
 
@@ -31,13 +32,13 @@ public class FXMLTelaPrincipalController implements Initializable {
     @FXML
     private AnchorPane apMenuEsquerdo;
     @FXML
-    private ImageView imgLogoTipo;
+    private VBox vbMenuDireito;
+    @FXML
+    private ImageView imgLogotipo;
     @FXML
     private Button btnHome;
     @FXML
     private AnchorPane apMenuDireito;
-    @FXML
-    private VBox vboxMenuEsquerdo;
     @FXML
     private Button btnAtendimentos;
     @FXML
@@ -52,107 +53,207 @@ public class FXMLTelaPrincipalController implements Initializable {
     private Button btnPagamentos;
     @FXML
     private Button btnSair;
+    
+    
 
     /**
-     * Initializes the controller class
-     * Metodo de incialização do FXMLTelaPrincipal
+     * Initializes the controller class. Método de inicialização do FXMLTelaPrincipal
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        botaoSelecionadoCor("#9a0000", "#2A2A2A", "#2A2A2A", "#2A2A2A", "#2A2A2A"
-                , "#2A2A2A", "#2A2A2A");
-        abrirFormularioNoMenuEsquerdo("FXMLHome");
+        abrirComHome();
     }    
 
-    // Metodo para clicar no botão e chamar o FXML passado por argumento
-    private void abrirFormularioNoMenuEsquerdo(String nomeFormulario){
-        try {
-            // Colocando no objeto a o FxmlMDI01 
-            AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource(nomeFormulario + ".fxml"));
-            //Deixar o AncorPane FXMLMDI01
+    @FXML//método vai abrir home ou FXMLHome.fxml dentro do apMenuEsquerdo
+    private void abrirHome(ActionEvent event) 
+    {   
+        abrirComHome();
+        
+    }
+    
+    //método para inicializar o FXMLTelaPrincipal com o FXMLHome ativo
+    //ou seja, para abrir o programa na tela home
+    public void abrirComHome()
+    {
+        try
+        {
+            //colocando no objeto a o FXMLMDI01
+            AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("FXMLHome.fxml"));
+            //deixar o AnchorPane FXMLMID02 fluido ou ancorado em todos os lados
             AnchorPane.setTopAnchor(a, 0.0);
             AnchorPane.setLeftAnchor(a, 0.0);
             AnchorPane.setRightAnchor(a, 0.0);
             AnchorPane.setBottomAnchor(a, 0.0);
-
-            // chamar dentro do apMenuEsquerdo FXMLAPmenuesquerdo
+            //chamar dentro do apMenuEsquerdo o FXMLMDI01
             apMenuDireito.getChildren().setAll(a);
+            corBotaoSelecionado(" #9a0000", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A");
+           
+        } 
+        catch (IOException ex)
+        {
+            Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
-        } catch (IOException ex) {
+    @FXML//método vai abrir home ou FXMLAtendimentos.fxml dentro do apMenuEsquerdo
+    private void AbrirAtendimentos(ActionEvent event) 
+    {
+        try
+        {
+            //colocando no objeto a o FXMLMDI01
+            AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("FXMLAtendimentos.fxml"));
+            //deixar o AnchorPane FXMLMID02 fluido ou ancorado em todos os lados
+            AnchorPane.setTopAnchor(a, 0.0);
+            AnchorPane.setLeftAnchor(a, 0.0);
+            AnchorPane.setRightAnchor(a, 0.0);
+            AnchorPane.setBottomAnchor(a, 0.0);
+            //chamar dentro do apMenuEsquerdo o FXMLMDI01
+            apMenuDireito.getChildren().setAll(a);
+            corBotaoSelecionado(" #2A2A2A", " #9a0000", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A");
+            
+        } 
+        catch (IOException ex)
+        {
+            Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML//método vai abrir home ou FXMLAgendamentos.fxml dentro do apMenuEsquerdo
+    private void abrirAgendamentos(ActionEvent event) 
+    {
+        try
+        {
+            //colocando no objeto a o FXMLMDI01
+            AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("FXMLAgendamentos.fxml"));
+            //deixar o AnchorPane FXMLMID02 fluido ou ancorado em todos os lados
+            AnchorPane.setTopAnchor(a, 0.0);
+            AnchorPane.setLeftAnchor(a, 0.0);
+            AnchorPane.setRightAnchor(a, 0.0);
+            AnchorPane.setBottomAnchor(a, 0.0);
+            //chamar dentro do apMenuEsquerdo o FXMLMDI01
+            apMenuDireito.getChildren().setAll(a);
+            corBotaoSelecionado(" #2A2A2A", " #2A2A2A", " #9a0000", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A");
+            
+            
+        } 
+        catch (IOException ex)
+        {
+            Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        btnAgendamentos.getStylesheets().add("-fx-background-color: green");
+    }
+
+    @FXML//método vai abrir home ou FXMLCadastros.fxml dentro do apMenuEsquerdo
+    private void abrirCadastros(ActionEvent event)
+    {
+        try
+        {
+            //colocando no objeto a o FXMLMDI01
+            AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("FXMLCadastros.fxml"));
+            //deixar o AnchorPane FXMLMID02 fluido ou ancorado em todos os lados
+            AnchorPane.setTopAnchor(a, 0.0);
+            AnchorPane.setLeftAnchor(a, 0.0);
+            AnchorPane.setRightAnchor(a, 0.0);
+            AnchorPane.setBottomAnchor(a, 0.0);
+            //chamar dentro do apMenuEsquerdo o FXMLMDI01
+            apMenuDireito.getChildren().setAll(a);
+            corBotaoSelecionado(" #2A2A2A", " #2A2A2A", " #2A2A2A", " #9a0000", " #2A2A2A", " #2A2A2A", " #2A2A2A");
+            
+        } 
+        catch (IOException ex)
+        {
+            Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML//método vai abrir home ou FXMLPesquisas.fxml dentro do apMenuEsquerdo
+    private void abrirPesquisas(ActionEvent event)
+    {
+        try
+        {
+            //colocando no objeto a o FXMLMDI01
+            AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("FXMLPesquisas.fxml"));
+            //deixar o AnchorPane FXMLMID02 fluido ou ancorado em todos os lados
+            AnchorPane.setTopAnchor(a, 0.0);
+            AnchorPane.setLeftAnchor(a, 0.0);
+            AnchorPane.setRightAnchor(a, 0.0);
+            AnchorPane.setBottomAnchor(a, 0.0);
+            //chamar dentro do apMenuEsquerdo o FXMLMDI01
+            apMenuDireito.getChildren().setAll(a);
+            corBotaoSelecionado(" #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #9a0000", " #2A2A2A", " #2A2A2A");
+            
+        } 
+        catch (IOException ex)
+        {
+            Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML//método vai abrir home ou FXMLRelatorios.fxml dentro do apMenuEsquerdo
+    private void abrirRelatorios(ActionEvent event)
+    {
+        try
+        {
+            //colocando no objeto a o FXMLMDI01
+            AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("FXMLRelatorios.fxml"));
+            //deixar o AnchorPane FXMLMID02 fluido ou ancorado em todos os lados
+            AnchorPane.setTopAnchor(a, 0.0);
+            AnchorPane.setLeftAnchor(a, 0.0);
+            AnchorPane.setRightAnchor(a, 0.0);
+            AnchorPane.setBottomAnchor(a, 0.0);
+            //chamar dentro do apMenuEsquerdo o FXMLMDI01
+            apMenuDireito.getChildren().setAll(a);
+            corBotaoSelecionado(" #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #9a0000", " #2A2A2A");
+            
+        } 
+        catch (IOException ex)
+        {
+            Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML//método vai abrir home ou FXMLPagamentos.fxml dentro do apMenuEsquerdo
+    private void abrirPagamentos(ActionEvent event)
+    {
+        try
+        {
+            //colocando no objeto a o FXMLMDI01
+            AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("FXMLPagamentos.fxml"));
+            //deixar o AnchorPane FXMLMID02 fluido ou ancorado em todos os lados
+            AnchorPane.setTopAnchor(a, 0.0);
+            AnchorPane.setLeftAnchor(a, 0.0);
+            AnchorPane.setRightAnchor(a, 0.0);
+            AnchorPane.setBottomAnchor(a, 0.0);
+            //chamar dentro do apMenuEsquerdo o FXMLMDI01
+            apMenuDireito.getChildren().setAll(a);
+            corBotaoSelecionado(" #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #2A2A2A", " #9a0000");
+            
+            
+        } 
+        catch (IOException ex)
+        {
             Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    //Metodo para mudar a cor do botão quando clicado
-    public void botaoSelecionadoCor(String btnHo, String btnAt, String btnAg, 
-            String btnCa, String btnPe, String btnRe, String btnPa){
-        
-        btnAgendamentos.setStyle("-fx-background-color: "+ btnAg +";");
-        btnAtendimentos.setStyle("-fx-background-color: "+ btnAt +";");
-        btnCadastros.setStyle("-fx-background-color: "+ btnCa +";");
-        btnHome.setStyle("-fx-background-color: "+ btnHo +";");
-        btnPagamentos.setStyle("-fx-background-color: "+ btnPa +";");
-        btnPesquisas.setStyle("-fx-background-color: "+ btnPe +";");
-        btnRelatorios.setStyle("-fx-background-color: "+ btnRe +";");
-    }
-    
-    @FXML// Metodo para abrir home ou FXMLHome.fxml dentro do apMenuDireito
-    private void abrirHome(ActionEvent event) {
-        botaoSelecionadoCor("#9a0000", "#2A2A2A", "#2A2A2A", "#2A2A2A", "#2A2A2A"
-                , "#2A2A2A", "#2A2A2A");
-        
-        abrirFormularioNoMenuEsquerdo("FXMLHome");
-    }
-       
-    @FXML// Metodo para abrir home ou Atendimentos.fxml dentro do apMenuDireito
-    private void abrirAtendimentos(ActionEvent event) {
-        botaoSelecionadoCor("#2A2A2A", "#9a0000", "#2A2A2A", "#2A2A2A", "#2A2A2A"
-                , "#2A2A2A", "#2A2A2A");
-        abrirFormularioNoMenuEsquerdo("FXMLAtendimentos");
-    }
+    //método para mudar a cor do botão selecionado
+    public void corBotaoSelecionado(String btnH, String btnAt, String btnAg, String btnCa, String btnPe, 
+            String btnRe, String btnPa)
+    {
+         btnHome.setStyle("-fx-background-color:" + btnH + ";"); 
+         btnAtendimentos.setStyle("-fx-background-color:" + btnAt + ";");
+         btnAgendamentos.setStyle("-fx-background-color:" + btnAg + ";");        
+         btnCadastros.setStyle("-fx-background-color:" + btnCa + ";");
+         btnPesquisas.setStyle("-fx-background-color:" + btnPe + ";");         
+         btnRelatorios.setStyle("-fx-background-color:" + btnRe + ";");
+         btnPagamentos.setStyle("-fx-background-color:" + btnPa + ";");
+    } 
 
-    @FXML// Metodo para abrir home ou Agendamentos.fxml dentro do apMenuDireito
-    private void abrirAgendamentos(ActionEvent event) {
-        botaoSelecionadoCor("#2A2A2A", "#2A2A2A", "#9a0000", "#2A2A2A", "#2A2A2A"
-                , "#2A2A2A", "#2A2A2A");
-        abrirFormularioNoMenuEsquerdo("FXMLAgendamentos");
-    }
-
-    @FXML// Metodo para abrir home ou Cadastros.fxml dentro do apMenuDireito
-    private void abrirCadastros(ActionEvent event) {
-        botaoSelecionadoCor("#2A2A2A", "#2A2A2A", "#2A2A2A", "#9a0000", "#2A2A2A"
-                , "#2A2A2A", "#2A2A2A");
-        abrirFormularioNoMenuEsquerdo("FXMLCadastros");
-    }
-
-    @FXML// Metodo para abrir home ou Pesquisas.fxml dentro do apMenuDireito
-    private void abrirPesquisas(ActionEvent event) {
-        botaoSelecionadoCor("#2A2A2A", "#2A2A2A", "#2A2A2A", "#2A2A2A", "#9a0000"
-                , "#2A2A2A", "#2A2A2A");
-        abrirFormularioNoMenuEsquerdo("FXMLPesquisas");
-    }
-
-    @FXML// Metodo para abrir home ou Relatorios.fxml dentro do apMenuDireito
-    private void abrirRelatorios(ActionEvent event) {
-        botaoSelecionadoCor("#2A2A2A", "#2A2A2A", "#2A2A2A", "#2A2A2A", "#2A2A2A"
-                , "#9a0000", "#2A2A2A");
-        abrirFormularioNoMenuEsquerdo("FXMLRelatorios");
-    }
-
-    @FXML// Metodo para abrir home ou Pagamentos.fxml dentro do apMenuDireito
-    private void abrirPagamentos(ActionEvent event) {
-        botaoSelecionadoCor("#2A2A2A", "#2A2A2A", "#2A2A2A", "#2A2A2A", "#2A2A2A"
-                , "#2A2A2A", "#9a0000");
-        abrirFormularioNoMenuEsquerdo("FXMLPagamentos");
-    }
-    
-    //Metodo para mudar a cor do botão selecionado
-
-    @FXML
-    private void sairSistema(ActionEvent event) {
+    @FXML//botaão que fehcar a aplicação
+    private void fecharAplicacao(ActionEvent event)
+    {
         System.exit(0);
-        
-    }
+    }   
+
     
 }

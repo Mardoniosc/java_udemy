@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -13,7 +15,7 @@
         <URL value="@fxmlcadastros.css" />
     </stylesheets>
    <children>
-      <GridPane layoutX="142.0" layoutY="76.0" prefHeight="613.0" prefWidth="637.0">
+      <GridPane layoutX="117.0" layoutY="80.0" prefHeight="638.0" prefWidth="706.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,69 +30,69 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnCadImoUrb" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Imóveis Urbanos" GridPane.rowIndex="1">
+            <Button fx:id="btnCadCliPF" mnemonicParsing="false" onAction="#abrirFXMLCadPF" prefHeight="91.0" prefWidth="353.0" text="Clientes Pessoas Fisicas">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadImobiliarias" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Imobiliarias" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="btnCadImoUr" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Imóveis Urbanos" GridPane.rowIndex="1">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadCorretores" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Corretores" GridPane.rowIndex="2">
+            <Button fx:id="btnCadCliPJ" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Clientes Pessoas Juridicas" GridPane.columnIndex="1">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadImoRur" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Imoveis Rurais" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="btnCadImovRu" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Imóveis Rurais" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadCliePF" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#abrirFXMLCadPF" prefHeight="91.0" prefWidth="353.0" text="Cliente PEssoas Fisicas">
+            <Button fx:id="btnCadCorretor" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Corretores" GridPane.rowIndex="2">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadCliPJ" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Cliente Pessoas Juridicas" GridPane.columnIndex="1">
+            <Button fx:id="btnCadImobiliaria" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Imobiliarias" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadCidades" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Cidades" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Button fx:id="btnCadFuncionairo" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Funcionários" GridPane.rowIndex="3">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadLogra" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Logradouros" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button fx:id="btnCadPrestServ" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Prestadores de Serviços" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadPrestServ" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Prestadores de serviços" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="btnCadLogin" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Login" GridPane.rowIndex="4">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadEstados" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Estados" GridPane.rowIndex="6">
+            <Button fx:id="btnCadLog" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Logradouros" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadBairros" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Bairros" GridPane.rowIndex="5">
+            <Button fx:id="btnCadBairro" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Bairros" GridPane.rowIndex="5">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadLogin" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Login" GridPane.rowIndex="4">
+            <Button fx:id="btnCadCidade" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Cidades" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadFunc" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Funcionários" GridPane.rowIndex="3">
+            <Button fx:id="btnCadEstado" mnemonicParsing="false" onAction="#abrirFXMLCadEstados" prefHeight="91.0" prefWidth="353.0" text="Estados" GridPane.rowIndex="6">
                <font>
-                  <Font name="Century Gothic" size="24.0" />
+                  <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
          </children>
