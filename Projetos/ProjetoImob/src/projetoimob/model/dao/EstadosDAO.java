@@ -80,8 +80,8 @@ public class EstadosDAO
         try
         {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, estados.getNome_Estado());
-            stmt.setString(2, estados.getSigla_Estado());
+            stmt.setInt(1, estados.getId_Estado());
+            
             
             stmt.execute();
             

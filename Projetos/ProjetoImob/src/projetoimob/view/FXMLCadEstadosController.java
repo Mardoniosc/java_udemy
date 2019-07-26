@@ -132,5 +132,38 @@ public class FXMLCadEstadosController implements Initializable {
         txtNomeEstado.setText("");
         txtSiglaEstado.setText("");
     }
+
+    @FXML//Metodo para selecionar o que esta sendo seleciona na linha
+    private void selecionarLinhaViewTable(MouseEvent event) {
+        txtCodigoEstado.setText(String.valueOf(tbEstados.getSelectionModel().getSelectedItem().getId_Estado()));
+        txtNomeEstado.setText(tbEstados.getSelectionModel().getSelectedItem().getNome_Estado());
+        txtSiglaEstado.setText(tbEstados.getSelectionModel().getSelectedItem().getSigla_Estado());
+    }
+
+    @FXML
+    private void deletarEstadoSelecionado(ActionEvent event) {
+        Estados estado = new Estados();
+        estado.setId_Estado(Integer.parseInt(txtCodigoEstado.getText()));
+        
+        estadosDAO.remover(estado);
+        limparCampos();
+        carregaEstadosNaTableView();
+        JOptionPane.showMessageDialog(null, "Estado deletado com sucesso!");
+        
+        
+    }
+
+    @FXML
+    private void atualizarEstadoSelecionado(ActionEvent event) {
+        Estados estado = new Estados();
+        estado.setId_Estado(Integer.parseInt(txtCodigoEstado.getText()));
+        estado.setNome_Estado(txtNomeEstado.getText());
+        estado.setSigla_Estado(txtSiglaEstado.getText());
+        
+        estadosDAO.alterar(estado);
+        limparCampos();
+        carregaEstadosNaTableView();
+    }
+    
     
 }

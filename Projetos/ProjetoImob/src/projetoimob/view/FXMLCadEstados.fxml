@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="apPrincipal" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projetoimob.view.FXMLCadEstadosController">
+<AnchorPane id="AnchorPane" fx:id="apPrincipal" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoimob.view.FXMLCadEstadosController">
     <stylesheets>
         <URL value="@fxmlcadestados.css" />
     </stylesheets>
@@ -46,7 +46,7 @@
                   <Font name="Century Gothic Bold Italic" size="18.0" />
                </font>
             </JFXTextField>
-            <TableView fx:id="tbEstados" layoutX="41.0" layoutY="119.0" prefHeight="417.0" prefWidth="922.0">
+            <TableView fx:id="tbEstados" layoutX="41.0" layoutY="119.0" onMouseClicked="#selecionarLinhaViewTable" prefHeight="417.0" prefWidth="922.0">
               <columns>
                 <TableColumn fx:id="colunaCodigoEstado" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Código Estado" />
                 <TableColumn fx:id="colunaNomeEstado" prefWidth="75.0" text="Nome Estado" />
@@ -93,7 +93,7 @@
       </AnchorPane>
       <AnchorPane layoutX="401.0" layoutY="726.0" prefHeight="62.0" prefWidth="184.0">
          <children>
-            <JFXButton fx:id="btnDeletar" maxHeight="50.0" maxWidth="180.0" minHeight="50.0" minWidth="180.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: BLACK;" text="DELETAR" textFill="WHITE">
+            <JFXButton fx:id="btnDeletar" maxHeight="50.0" maxWidth="180.0" minHeight="50.0" minWidth="180.0" onAction="#deletarEstadoSelecionado" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: BLACK;" text="DELETAR" textFill="WHITE">
                <effect>
                   <DropShadow color="#141414" />
                </effect>
@@ -108,7 +108,7 @@
       </AnchorPane>
       <AnchorPane layoutX="672.0" layoutY="726.0" prefHeight="62.0" prefWidth="184.0">
          <children>
-            <JFXButton fx:id="btnAtualizar" maxHeight="50.0" maxWidth="180.0" minHeight="50.0" minWidth="180.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: BLUE;" text="ATUALIZAR" textFill="WHITE">
+            <JFXButton fx:id="btnAtualizar" maxHeight="50.0" maxWidth="180.0" minHeight="50.0" minWidth="180.0" onAction="#atualizarEstadoSelecionado" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: BLUE;" text="ATUALIZAR" textFill="WHITE">
                <effect>
                   <DropShadow color="#141414" />
                </effect>
