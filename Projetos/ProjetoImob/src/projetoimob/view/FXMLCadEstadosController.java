@@ -6,6 +6,7 @@
 package projetoimob.view;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.sql.Connection;
@@ -42,11 +43,8 @@ public class FXMLCadEstadosController implements Initializable {
     private AnchorPane apPrincipal;
     @FXML
     private Label lblFecharCadastro;
-    @FXML
     private JFXTextField txtCodigoEstado;
-    @FXML
     private JFXTextField txtNomeEstado;
-    @FXML
     private JFXTextField txtSiglaEstado;
     @FXML
     private TableView<Estados> tbEstados;
@@ -74,6 +72,12 @@ public class FXMLCadEstadosController implements Initializable {
     private final DataBase database = DataBaseFactory.getDataBase("mysql");
     private final Connection connection = database.conectar();
     private final EstadosDAO estadosDAO = new EstadosDAO();
+    @FXML
+    private JFXTextField txtCodigoCidade;
+    @FXML
+    private JFXTextField txtNomeCidade;
+    @FXML
+    private JFXComboBox<?> cmbEstado;
 
     
 

@@ -61,15 +61,13 @@ public class FXMLCadastrosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML//método para abrir o FXMLCadPF
-    private void abrirFXMLCadPF(ActionEvent event)
-    {
+    
+    private void abrirFormularioExterno(String nomeFormulario){
         try
         {
             Stage stage = new Stage();
 
-            Parent root = FXMLLoader.load(getClass().getResource("FXMLCadPF.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource(nomeFormulario + ".fxml"));
 
             Scene scene = new Scene(root);
             
@@ -87,31 +85,20 @@ public class FXMLCadastrosController implements Initializable {
         }
     }
 
-   
+    @FXML//método para abrir o FXMLCadPF
+    private void abrirFXMLCadPF(ActionEvent event)
+    {
+        abrirFormularioExterno("FXMLCadPF");
+    }
 
     @FXML
     private void abrirFXMLCadEstados(ActionEvent event) {
-        
-         try
-        {
-            Stage stageCadEstados = new Stage();
+        abrirFormularioExterno("FXMLCadEstados");
+    }
 
-            Parent rootCadEstados = FXMLLoader.load(getClass().getResource("FXMLCadEstados.fxml"));
-
-            Scene sceneCadEstados = new Scene(rootCadEstados);
-            
-            //para retirar todos os botões de minimizar, maximizar e fechar
-            stageCadEstados.initStyle(StageStyle.UNDECORATED);
-
-            stageCadEstados.setScene(sceneCadEstados);
-
-            stageCadEstados.show();//abria a stage
-
-        } 
-        catch (IOException ex)
-        {
-            Logger.getLogger(FXMLTelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    @FXML
+    private void abrirFXMLCadCidades(ActionEvent event) {
+        abrirFormularioExterno("FXMLCadCidades");
     }
     
 }

@@ -85,7 +85,7 @@
                   <Font name="Century Gothic" size="27.0" />
                </font>
             </Button>
-            <Button fx:id="btnCadCidade" mnemonicParsing="false" prefHeight="91.0" prefWidth="353.0" text="Cidades" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Button fx:id="btnCadCidade" mnemonicParsing="false" onAction="#abrirFXMLCadCidades" prefHeight="91.0" prefWidth="353.0" text="Cidades" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font name="Century Gothic" size="27.0" />
                </font>

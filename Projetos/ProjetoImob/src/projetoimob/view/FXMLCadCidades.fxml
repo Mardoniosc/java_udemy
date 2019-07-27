@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
 <?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -10,10 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="apPrincipal" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoimob.view.FXMLCadEstadosController">
-    <stylesheets>
-        <URL value="@fxmlcadestados.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" fx:id="apPrincipal" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoimob.view.FXMLCadCidadesController">
    <children>
       <Pane layoutX="-10.0" maxHeight="180.0" maxWidth="1220.0" minHeight="180.0" minWidth="1220.0" prefHeight="180.0" prefWidth="1220.0" style="-fx-background-color: #0F1214;">
          <children>
@@ -24,38 +21,34 @@
             </Label>
          </children>
       </Pane>
-      <Label layoutX="132.0" layoutY="43.0" text="Cadastro de Estados" textFill="WHITE">
+      <Label layoutX="132.0" layoutY="43.0" text="Cadastro de Cidades" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold Italic" size="29.0" />
          </font>
       </Label>
       <AnchorPane layoutX="122.0" layoutY="117.0" maxHeight="580.0" maxWidth="1000.0" minHeight="580.0" minWidth="1000.0" prefHeight="580.0" prefWidth="1000.0" style="-fx-background-color: #2A2A2A;">
          <children>
-            <JFXTextField fx:id="txtCodigoEstado" editable="false" labelFloat="true" layoutX="41.0" layoutY="38.0" promptText="Código Estado" styleClass="jfx-text-field">
+            <JFXTextField fx:id="txtCodigoCidade" editable="false" labelFloat="true" layoutX="41.0" layoutY="38.0" promptText="Código Cidade" styleClass="jfx-text-field">
                <font>
                   <Font name="Century Gothic Bold Italic" size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtNomeEstado" labelFloat="true" layoutX="279.0" layoutY="38.0" prefHeight="39.0" prefWidth="503.0" promptText="Nome Estado" styleClass="jfx-text-field">
+            <JFXTextField fx:id="txtNomeCidade" labelFloat="true" layoutX="279.0" layoutY="38.0" prefHeight="39.0" prefWidth="503.0" promptText="Nome Cidade" styleClass="jfx-text-field">
                <font>
                   <Font name="Century Gothic Bold Italic" size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtSiglaEstado" labelFloat="true" layoutX="828.0" layoutY="38.0" prefHeight="39.0" prefWidth="133.0" promptText="Sigla Estado" styleClass="jfx-text-field">
-               <font>
-                  <Font name="Century Gothic Bold Italic" size="18.0" />
-               </font>
-            </JFXTextField>
-            <TableView fx:id="tbEstados" layoutX="41.0" layoutY="119.0" onMouseClicked="#selecionarLinhaViewTable" prefHeight="417.0" prefWidth="922.0">
-              <columns>
-                <TableColumn fx:id="colunaCodigoEstado" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Código Estado" />
-                <TableColumn fx:id="colunaNomeEstado" prefWidth="75.0" text="Nome Estado" />
-                  <TableColumn fx:id="colunaSiglaEstado" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Sigla Estado" />
-              </columns>
+            <TableView fx:id="tbCidade" layoutX="41.0" layoutY="119.0" onMouseClicked="#selecionarLinhaViewTable" prefHeight="417.0" prefWidth="922.0">
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="colunaCodigoCidade" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Código Cidade" />
+                  <TableColumn fx:id="colunaNomeCidade" prefWidth="75.0" text="Nome Cidade" />
+                  <TableColumn fx:id="colunaEstado" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Estado" />
+               </columns>
             </TableView>
+            <JFXComboBox fx:id="cmbEstado" labelFloat="true" layoutX="831.0" layoutY="38.0" prefHeight="38.0" prefWidth="112.0" promptText="Estado" />
          </children>
          <effect>
             <DropShadow />
@@ -122,4 +115,7 @@
          </effect>
       </AnchorPane>
    </children>
+   <stylesheets>
+      <URL value="@fxmlcadestados.css" />
+   </stylesheets>
 </AnchorPane>

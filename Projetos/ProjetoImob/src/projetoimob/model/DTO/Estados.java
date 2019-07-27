@@ -36,6 +36,12 @@ public class Estados {
     public void setSigla_Estado(String sigla_Estado) {
         this.sigla_Estado = sigla_Estado;
     }
+
+    @Override
+    public String toString() {
+        return getSigla_Estado();
+    }
+    
     
     
 }
