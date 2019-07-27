@@ -164,4 +164,40 @@ public class CidadesDAO {
         return retorno;
     }
     
+    //Listar cidade e estados pela sigla com inerJoin
+    public List<Cidades> listarCidadesEstados()
+    {
+        String sql = "select tb_cidades.id_Cidades, tb_cidades.nome_Cidades, "
+                + "tb_estados.sigla_Estado from tb_cidades inner join " +
+                "bd_imob.tb_estados on tb_cidades.id_Cidades = "
+                + "tb_estados.id_Estado";
+        
+        List<Cidades> retorno = new ArrayList<>();
+        
+        try
+        {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet resultado = stmt.executeQuery();
+            
+            while(resultado.next())
+            {
+                Cidades cidades = new Cidades();
+                cidades.setId_Cidades(resultado.getInt("id_Cidades"));
+                cidades.setNome_Cidades(resultado.getString("nome_Cidades"));
+                cidades.setSigla_Estado(resultado.getString("sigla_Estado"));
+                
+                //vamos adicionando a liss retorno
+                retorno.add(cidades);
+            }        
+           
+        }
+        catch(SQLException ex)
+        { 
+            JOptionPane.showMessageDialog(null, "Não foi possível listar do banco: " + ex);
+        }
+        
+        return retorno;
+        
+    }
+    
 }

@@ -21,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -62,7 +63,6 @@ public class FXMLCadCidadesController implements Initializable {
     private TableColumn<Cidades, Integer> colunaCodigoCidade;
     @FXML
     private TableColumn<Cidades, String> colunaNomeCidade;
-    @FXML
     private TableColumn<Estados, String> colunaSiglaEstado;
     
     //buscar os dados do banco de dados com um List
@@ -77,6 +77,8 @@ public class FXMLCadCidadesController implements Initializable {
     private final Connection connection = database.conectar();
     private final EstadosDAO estadosDAO = new EstadosDAO();
     private final CidadesDAO cidadeDAO = new CidadesDAO();
+    @FXML
+    private TableColumn<?, ?> colunaEstado;
 
     /**
      * Initializes the controller class.
@@ -85,9 +87,11 @@ public class FXMLCadCidadesController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         estadosDAO.setConnection(connection);
+        cidadeDAO.setConnection(connection);
         
         //metodo para povoar cmbEstado
         carregarEstadoNocmbEstado();
+        carregaCidadesNaTableView();
     }    
 
     @FXML
@@ -128,6 +132,19 @@ public class FXMLCadCidadesController implements Initializable {
         observableEstados = FXCollections.observableArrayList(listEstados);
         cmbEstado.setItems(observableEstados);
         
+    }
+    
+    public void carregaCidadesNaTableView()
+    {
+        colunaCodigoCidade.setCellValueFactory(new PropertyValueFactory<>("id_Cidades"));
+        colunaNomeCidade.setCellValueFactory(new PropertyValueFactory<>("nome_Cidades"));
+        colunaEstado.setCellValueFactory(new PropertyValueFactory<>("sigla_Estado"));
+        
+        listCidades = cidadeDAO.listarCidadesEstados();
+        
+        observableCidades = FXCollections.observableArrayList(listCidades);
+        
+        tbCidade.setItems(observableCidades);
     }
     
 }
