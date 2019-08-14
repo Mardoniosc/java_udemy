@@ -1,28 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Projeto PrimeFaces</title>
-    </h:head>
-    <h:body>
-        <h:form id="form_cadastroClientePF">
-            <p:fieldset legend="Formulário de Cadastro Cliente Pessoa Física">
-                <p:panelGrid columns="2">
-                    <h:outputLabel value="Codigo_Cliente" for="id_ClientePF"></h:outputLabel>
-                    <p:inputText id="id_ClientePF" value="#{clienteBean.clientePF.id_ClientePF}"></p:inputText>
-                    <p:commandButton id="btnEnviar" value="Enviar" 
-                                     action="#{clienteBean.adicionarObjetoAlist()}" 
-                                     update=":form_cadastroClientePF"></p:commandButton>
-                </p:panelGrid>
-                <p:dataTable value="#{clienteBean.listClientePF}" var="clientepf">
-                    <p:column headerText="Codigo Cliente" sortBy="#{clientepf.id_ClientePF}">
-                        <h:outputText value="#{clientepf.id_ClientePF}"></h:outputText>
-                    </p:column>
-                </p:dataTable>
-            </p:fieldset>
-        </h:form>
-    </h:body>
-</html>
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="templatePrincipal.xhtml">
+    <ui:define name="templateP">
+        
+    </ui:define>
+
+    
+</ui:decorate>
 
