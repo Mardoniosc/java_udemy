@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.br.clientepf;
+
+package com.br.clientePF;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,26 +7,23 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 
-/**
- *
- * @author p772920
- */
-
 @ManagedBean
 @SessionScoped
 public class ClienteBean {
     
-    //atributo criado do objeto ClientePessoaFisica
+    //criado do objeto clientePF de ClientePessoaFisica
     private ClientePessoaFisica clientePF = new ClientePessoaFisica();
     
-    //Lista para listar os atributos
+    //lista para listar os atributos
     private List<ClientePessoaFisica> listClientePF = new ArrayList<>();
     
-    //Metodo para adicionar o clientePF na listClientePF
-    public void adicionarObjetoAlist(){
-        //adicionou o objeto a list
+    //método para adiciona o bjeto clientePf na list
+    public void adicionarObjetoAList()
+    {
+        
+        //adicionou o bjeto a list
         listClientePF.add(clientePF);
-        //zera o objeto
+        //zera o objeto para não ficar carregado na memória
         clientePF = new ClientePessoaFisica();
         
     }
@@ -50,6 +43,7 @@ public class ClienteBean {
     public void setListClientePF(List<ClientePessoaFisica> listClientePF) {
         this.listClientePF = listClientePF;
     }
+    
     
     
 }

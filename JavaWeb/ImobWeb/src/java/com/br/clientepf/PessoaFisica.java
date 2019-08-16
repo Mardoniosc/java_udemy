@@ -1,8 +1,11 @@
-package com.br.clientepf;
+package com.br.clientePF;
 
 import java.sql.Date;
 
-
+/**
+ *
+ * @author fschi
+ */
 public class PessoaFisica extends Pessoa {
     
     //criando os atributos

@@ -1,5 +1,5 @@
 
-package com.br.model.DTO;
+package com.br.clientePF;
 
 /**
  *
@@ -41,6 +41,7 @@ public class Estados {
     public String toString() {
         return getSigla_Estado();
     }
+    
     
     
     

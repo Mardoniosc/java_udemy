@@ -1,6 +1,10 @@
 
-package com.br.clientepf;
+package com.br.clientePF;
 
+/**
+ *
+ * @author fschi
+ */
 public class Telefones {
     
     

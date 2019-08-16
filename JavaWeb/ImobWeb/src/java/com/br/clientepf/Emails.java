@@ -1,7 +1,11 @@
 
-package com.br.clientepf;
+package com.br.clientePF;
 
-public class Emails extends Telefones {
+/**
+ *
+ * @author fschi
+ */
+public class Emails extends Telefones{
     
     //atributos
     private int id_Email;

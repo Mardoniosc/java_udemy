@@ -1,6 +1,7 @@
 
 package com.br.model.dao;
 
+import com.br.clientePF.Estados;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,8 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import com.br.model.DTO.ClientePessoaFisica;
-import com.br.model.DTO.Estados;
+
 
 public class EstadosDAO
 {
@@ -128,6 +128,42 @@ public class EstadosDAO
         return retorno;
         
     }
+    
+    //método para listar
+    public List<Estados> listarNomeEstado()
+    {
+        String sql = "SELECT * FROM tb_estados";
+        
+        List<Estados> retorno = new ArrayList<>();
+        
+        try
+        {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet resultado = stmt.executeQuery();
+            
+            while(resultado.next())
+            {
+                Estados estados = new Estados();
+                
+                estados.setNome_Estado(resultado.getString("nome_Estado"));
+                
+                
+                //vamos adicionando a liss retorno
+                retorno.add(estados);
+            }        
+                      
+           
+        }
+        catch(SQLException ex)
+        { 
+            JOptionPane.showMessageDialog(null, "Não foi possível listar do banco: " + ex);
+              
+        }
+        
+        return retorno;
+        
+    }
+    
     
     //método para buscar
     public Estados buscar(Estados estados)

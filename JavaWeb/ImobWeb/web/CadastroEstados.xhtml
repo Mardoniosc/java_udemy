@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:f="http://xmlns.jcp.org/jsf/core"
+             template="templatePrincipal.xhtml">
+
+    <h:form id="form_CadastroEstados">
+        <p:fieldset legend="Formulário de Cadastro de Cliente Pessoa Física">
+
+            <p:panelGrid columns="3">
+                <h:outputLabel value="Código Estado " for="id_Estado"></h:outputLabel>
+                <h:outputLabel value="Nome Estado " for="nome_Estado"></h:outputLabel>
+                <h:outputLabel value="Sigla Estado " for="sigla_Estado"></h:outputLabel>
+                
+                <p:inputText id="id_Estado" value="#{estadosBean.estados.id_Estado}" dir="true" autocomplete="off" ></p:inputText>                
+                <p:inputText id="nome_Estado" value="#{estadosBean.estados.nome_Estado}" autocomplete="off" ></p:inputText>            
+                <p:inputText id="sigla_Estado" value="#{estadosBean.estados.sigla_Estado}" autocomplete="off" ></p:inputText>
+                
+                <p:commandButton id="btnDeletar"
+                                 value="DELETAR"
+                                 icon="ui-icon-close"
+                                 update="@form"
+                                 ></p:commandButton>
+                <p:commandButton id="btnAtualizar"
+                                 value="ATUALIZAR"
+                                 icon="ui-icon-arrowrefresh-1-w"
+                                 update="@form"                                 
+                                 ></p:commandButton>
+                <p:commandButton id="btnInserir"
+                                 value="INSERIR"
+                                 action="#{estadosBean.inseir()}"
+                                 icon="ui-icon-disk"
+                                 update="@form"
+                                 ></p:commandButton>
+            </p:panelGrid>
+
+            <p:dataTable value="#{estadosBean.listEstados}" var="estado">
+                <p:column headerText="Código Estado" sortBy="#{estado.id_Estado}">
+                    <h:outputText value="#{estado.id_Estado}"></h:outputText>
+                </p:column>
+                <p:column headerText="Nome Estado" sortBy="#{estado.nome_Estado}">
+                    <h:outputText value="#{estado.nome_Estado}"></h:outputText>
+                </p:column>
+                <p:column headerText="Sigla Estado" sortBy="#{estado.sigla_Estado}">
+                    <h:outputText value="#{estado.sigla_Estado}"></h:outputText>
+                </p:column>
+            </p:dataTable>
+            
+            <p:commandButton id="btnListar"
+                                 value="LISTAR"
+                                 
+                                 update="@form"
+                                 action="#{estadosBean.listarEstados()}"
+                                 ></p:commandButton>
+        </p:fieldset>
+    </h:form>
+
+</ui:decorate>
+

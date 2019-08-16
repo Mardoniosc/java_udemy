@@ -1,5 +1,9 @@
-package com.br.clientepf;
+package com.br.clientePF;
 
+/**
+ *
+ * @author fschi
+ */
 public class ClientePessoaFisica extends PessoaFisica {
     
     //atributos

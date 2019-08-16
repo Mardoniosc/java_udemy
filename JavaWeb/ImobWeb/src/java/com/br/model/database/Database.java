@@ -5,14 +5,12 @@ import java.sql.Connection;
 
 /**
  *
- * @author p772920
+ * @author fschi
  */
-public interface DataBase {
-    
-    //criar um metodo de conexão
+public interface Database {
+    //método de conexão
     public Connection conectar();
-    
-    //metodo de desconectar
+    //método de desconectar
     public void desconectar(Connection conn);
     
 }

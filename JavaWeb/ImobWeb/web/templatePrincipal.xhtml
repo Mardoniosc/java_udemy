@@ -7,40 +7,70 @@
     <h:head>
         <title>Imob</title>
     </h:head>
-    <h:body>
+    <h:body>        
+        
         <h3>Sistema Imob</h3>
         <hr></hr>
+        <ui:insert name="templateP"></ui:insert>
         
         <p:menubar>
             <p:menuitem value="Home" url="index.jsf"></p:menuitem>
-            <p:menuitem value="Atendimento" url="#"></p:menuitem>
-            <p:submenu label="Cadastro">
-                <p:menuitem value="Cadastro Pessoa Fisica" url="CadastroPessoaFisica.jsf"></p:menuitem>
-                <p:menuitem value="Cadastro Pessoa Juridica" url="#" />
-                <p:menuitem value="Imóveis Urbanos" url="#" />
-                <p:menuitem value="Imóveis Rurais" url="#" />
-                <p:menuitem value="carretores" url="#" />
-                <p:menuitem value="Imobiliarias" url="#" />
-                <p:menuitem value="Funcionarios" url="#" />
-                <p:menuitem value="Prestadores de serviços" url="#" />
-                <p:menuitem value="Login" url="#" />
-                <p:menuitem value="Logradouros" url="#" />
-                <p:menuitem value="Bairros" url="#" />
-                <p:menuitem value="Cidades" url="#" />
-                <p:menuitem value="Estados" url="#" />
+            <p:menuitem value="Atendimentos" url="#"></p:menuitem>
+            <p:menuitem value="Agendamentos" url="#"></p:menuitem>
+            <p:submenu label="Cadastros">
+                <p:menuitem value="Cadastro Pessoa Física" url="CadastroPessoaFisica.jsf" />
+                <p:menuitem value="Cadastro Pessoa Jurídica" url="#"/>
+                <p:menuitem value="Imóveis Urbanos" url="#"/>
+                <p:menuitem value="Imóveis Rurais" url="#"/>
+                <p:menuitem value="Corretores" url="#"/>
+                <p:menuitem value="Immobiliárias" url="#"/>
+                <p:menuitem value="Funcionários" url="#"/>
+                <p:menuitem value="Prestadores de Serviços" url="#"/>
+                <p:menuitem value="Login" url="#"/>
+                <p:menuitem value="Logradouros" url="#"/>
+                <p:menuitem value="Bairros" url="#"/>
+                <p:menuitem value="Cidades" url="#"/>
+                <p:menuitem value="Estados" url="CadastroEstados.jsf"/>
             </p:submenu>
-            <p:menuitem value="Pesquisa" url="#"></p:menuitem>
+            <p:submenu label="Pesquisas">
+                <p:menuitem value="Cadastro Pessoa Física" url="#" />
+                <p:menuitem value="Cadastro Pessoa Jurídica" url="#"/>
+                <p:menuitem value="Imóveis Urbanos" url="#"/>
+                <p:menuitem value="Imóveis Rurais" url="#"/>
+                <p:menuitem value="Corretores" url="#"/>
+                <p:menuitem value="Immobiliárias" url="#"/>
+                <p:menuitem value="Funcionários" url="#"/>
+                <p:menuitem value="Prestadores de Serviços" url="#"/>
+                <p:menuitem value="Login" url="#"/>
+                <p:menuitem value="Logradouros" url="#"/>
+                <p:menuitem value="Bairros" url="#"/>
+                <p:menuitem value="Cidades" url="#"/>
+                <p:menuitem value="Estados" url="#"/>
+            </p:submenu>
             <p:submenu label="Relatórios">
-                <p:menuitem value="Geral" url="#" />
-                <p:menuitem value="Atendimento do dia" url="#" />
-                <p:menuitem value="Da semana" url="#" />
+                <p:menuitem value="Cadastro Pessoa Física" url="#" />
+                <p:menuitem value="Cadastro Pessoa Jurídica" url="#"/>
+                <p:menuitem value="Imóveis Urbanos" url="#"/>
+                <p:menuitem value="Imóveis Rurais" url="#"/>
+                <p:menuitem value="Corretores" url="#"/>
+                <p:menuitem value="Immobiliárias" url="#"/>
+                <p:menuitem value="Funcionários" url="#"/>
+                <p:menuitem value="Prestadores de Serviços" url="#"/>
+                <p:menuitem value="Login" url="#"/>
+                <p:menuitem value="Logradouros" url="#"/>
+                <p:menuitem value="Bairros" url="#"/>
+                <p:menuitem value="Cidades" url="#"/>
+                <p:menuitem value="Estados" url="#"/>
             </p:submenu>
-            <p:menuitem value="Pagamentos" url="#"></p:menuitem>
+            <p:submenu label="Pagamentos">
+                <p:menuitem value="Comissões" url="#"/>
+                
+            </p:submenu>
             <p:menuitem value="Sair" url="#"></p:menuitem>
-            
         </p:menubar>
-        <br></br>
-        <ui:insert name="templateP"></ui:insert>
+        
+        <ui:insert></ui:insert>
+        
         
     </h:body>
 </html>

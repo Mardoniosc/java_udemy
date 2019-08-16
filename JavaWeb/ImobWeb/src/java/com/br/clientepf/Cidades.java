@@ -1,5 +1,5 @@
 
-package com.br.model.DTO;
+package com.br.clientePF;
 
 /**
  *
@@ -10,7 +10,10 @@ public class Cidades extends Estados {
     //atributos
     private int id_Cidades;
     private String nome_Cidades;
-    private int id_Estado;
+    private String sigla_Estado;
+    private int id_Estados;
+    
+    
     
     //get e set
 
@@ -30,12 +33,26 @@ public class Cidades extends Estados {
         this.nome_Cidades = nome_Cidades;
     }
 
-    public int getId_Estado() {
-        return id_Estado;
+    public String getSigla_Estado() {
+        return sigla_Estado;
     }
 
-    public void setId_Estado(int id_Estado) {
-        this.id_Estado = id_Estado;
+    public void setSigla_Estado(String sigla_Estado) {
+        this.sigla_Estado = sigla_Estado;
     }
+
+    public int getId_Estados() {
+        return id_Estados;
+    }
+
+    public void setId_Estados(int id_Estados) {
+        this.id_Estados = id_Estados;
+    }
+
+ 
+    
+   
+    
+    
     
 }
